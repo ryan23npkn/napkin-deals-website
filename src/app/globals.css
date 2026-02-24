@@ -42,7 +42,7 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --font-display: var(--font-instrument);
+  --font-display: var(--font-playfair);
   --font-sans: var(--font-inter);
 
   --radius-sm: 8px;

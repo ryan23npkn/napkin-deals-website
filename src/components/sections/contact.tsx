@@ -39,7 +39,7 @@ export function Contact() {
               viewport={viewportConfig}
               className="flex flex-col justify-center bg-primary p-8 text-primary-foreground md:col-span-2"
             >
-              <h3 className="font-display text-2xl">Get in Touch</h3>
+              <h3 className="font-display font-bold text-2xl">Get in Touch</h3>
               <p className="mt-3 text-sm leading-relaxed opacity-80">
                 Reach out directly or fill in the form. We respond to every
                 inquiry within one business day.

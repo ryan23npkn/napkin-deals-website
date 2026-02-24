@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Instrument_Serif } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import "./globals.css"
 
@@ -9,10 +8,10 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-instrument",
+  weight: ["400", "700", "900"],
+  variable: "--font-playfair",
 })
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfairDisplay.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

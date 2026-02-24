@@ -42,7 +42,7 @@ export function WhoWeServe() {
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-xl text-foreground">
+              <h3 className="font-display text-xl leading-tight text-foreground">
                 {audience.title}
               </h3>
               <p className="mt-1 text-sm font-medium text-accent">

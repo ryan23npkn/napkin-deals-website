@@ -39,7 +39,7 @@ export function CallToAction() {
             variants={fadeInUp}
             className="rounded-xl border border-white/10 bg-white/[0.07] p-8 backdrop-blur-sm"
           >
-            <h3 className="font-display text-2xl text-white">
+            <h3 className="font-display font-bold text-2xl text-white">
               Ready to sell or raise capital?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
@@ -63,7 +63,7 @@ export function CallToAction() {
             variants={fadeInUp}
             className="rounded-xl border border-white/10 bg-white/[0.07] p-8 backdrop-blur-sm"
           >
-            <h3 className="font-display text-2xl text-white">
+            <h3 className="font-display font-bold text-2xl text-white">
               Looking for your next acquisition?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">

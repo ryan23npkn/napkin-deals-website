@@ -56,7 +56,7 @@ export function Hero() {
                 <motion.span
                   key={word}
                   variants={fadeInUp}
-                  className="mr-3 inline-block font-display text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.05] tracking-tight text-foreground last:mr-0 sm:mr-4"
+                  className="mr-3 inline-block font-display font-bold text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.05] tracking-tight text-foreground last:mr-0 sm:mr-4"
                 >
                   {i === 2 ? <GradientText>{word}</GradientText> : word}
                 </motion.span>
