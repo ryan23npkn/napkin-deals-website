@@ -68,7 +68,7 @@ export function Header() {
               <a href="#contact">Schedule a Call</a>
             </Button>
             <Button size="sm" className="rounded-full" asChild>
-              <a href="#contact">
+              <a href="https://app.napkindeals.com/login">
                 View Deals
                 <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </a>
