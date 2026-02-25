@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import Script from "next/script"
 import {
   ArrowRight,
   ArrowLeft,
@@ -112,16 +111,6 @@ function openCalendly() {
 export default function TakePrivatePage() {
   return (
     <>
-      {/* Calendly popup widget */}
-      <link
-        href="https://assets.calendly.com/assets/external/widget.css"
-        rel="stylesheet"
-      />
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
-
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 glass border-b border-border/10">
         <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8">

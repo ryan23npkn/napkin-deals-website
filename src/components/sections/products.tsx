@@ -74,10 +74,19 @@ export function Products() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full" asChild>
-                <a href="#contact">
-                  Request a Demo
-                </a>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).Calendly) {
+                    ;(window as any).Calendly.initPopupWidget({
+                      url: "https://calendly.com/npkn-ryan/bulletin-demo",
+                    })
+                  }
+                }}
+              >
+                Request a Demo
               </Button>
             </div>
           </motion.div>
