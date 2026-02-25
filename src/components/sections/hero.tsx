@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
+import { DealPipeline } from "@/components/deal-pipeline"
 import { HERO_STATS, MEDIA_MENTIONS, SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
@@ -39,72 +40,87 @@ export function Hero() {
       <GradientOrb className="right-[-10%] top-[30%] h-[400px] w-[400px]" color="accent" />
 
       <Container className="relative">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="mx-auto max-w-3xl text-center"
-        >
-          {/* Headline */}
-          <motion.h1
-            variants={fadeInUp}
-            className="font-display font-bold text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.05] tracking-tight text-foreground"
-          >
-            The Private Market{" "}
-            <GradientText>Brokerage.</GradientText>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeInUp}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-muted"
-          >
-            Napkin Deals aggregates dealflow from 50+ sources and uses
-            intent-driven matching to connect the right buyers, sellers, and
-            capital — faster. Advisory. Brokerage. Capital. Deals.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="rounded-full text-base" asChild>
-              <a href="#contact">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full text-base"
-              asChild
-            >
-              <a href="#how-it-works">See How It Works</a>
-            </Button>
-          </motion.div>
-
-          {/* Trust line */}
-          <motion.p
-            variants={fadeInUp}
-            className="mt-6 text-sm text-foreground-subtle"
-          >
-            Free to list. No upfront pressure. Success-fee only.
-          </motion.p>
-
-          {/* Stats */}
+        {/* Two-column layout */}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left: Content */}
           <motion.div
-            variants={fadeInUp}
-            className="mx-auto mt-10 inline-flex items-center gap-8 rounded-xl border border-border-subtle bg-card/50 p-6 backdrop-blur-sm"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
           >
-            {HERO_STATS.map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-8">
-                {i > 0 && (
-                  <div className="h-10 w-px bg-border" />
-                )}
-                <StatItem value={stat.value} label={stat.label} />
-              </div>
-            ))}
+            <motion.h1
+              variants={fadeInUp}
+              className="font-display font-bold text-[clamp(2.5rem,1.75rem+3.75vw,4.25rem)] leading-[1.05] tracking-tight text-foreground"
+            >
+              The Private Market{" "}
+              <GradientText>Brokerage.</GradientText>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
+            >
+              Napkin Deals aggregates dealflow from 50+ sources and uses
+              intent-driven matching to connect the right buyers, sellers, and
+              capital — faster. Advisory. Brokerage. Capital. Deals.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
+              <Button size="lg" className="rounded-full text-base" asChild>
+                <a href="#contact">
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full text-base"
+                asChild
+              >
+                <a href="#how-it-works">See How It Works</a>
+              </Button>
+            </motion.div>
+
+            <motion.p
+              variants={fadeInUp}
+              className="mt-6 text-sm text-foreground-subtle"
+            >
+              Free to list. No upfront pressure. Success-fee only.
+            </motion.p>
+
+            {/* Stats */}
+            <motion.div
+              variants={fadeInUp}
+              className="mt-10 inline-flex items-center gap-6 rounded-xl border border-border-subtle bg-card/50 p-5 backdrop-blur-sm sm:gap-8 sm:p-6"
+            >
+              {HERO_STATS.map((stat, i) => (
+                <div key={stat.label} className="flex items-center gap-6 sm:gap-8">
+                  {i > 0 && (
+                    <div className="h-10 w-px bg-border" />
+                  )}
+                  <StatItem value={stat.value} label={stat.label} />
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Right: Deal Pipeline animation */}
+          <div className="hidden lg:block">
+            <div className="rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm dark:border-border/30">
+              <div className="mb-4 flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
+                  Deal Pipeline
+                </span>
+                <span className="flex items-center gap-1.5 text-xs text-foreground-subtle">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
+                  Real-time
+                </span>
+              </div>
+              <DealPipeline />
+            </div>
+          </div>
+        </div>
 
         {/* Media Mentions */}
         <motion.div
