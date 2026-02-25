@@ -15,7 +15,7 @@ import {
 // ========== NAVIGATION ==========
 export const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Process", href: "#process" },
+  { label: "Products", href: "#products" },
   { label: "Who We Serve", href: "#who-we-serve" },
   { label: "Why Napkin", href: "#why-napkin" },
   { label: "Contact", href: "#contact" },
@@ -24,6 +24,7 @@ export const NAV_LINKS = [
 export const SECTION_IDS = {
   hero: "hero",
   howItWorks: "how-it-works",
+  products: "products",
   process: "process",
   beforeAfter: "before-after",
   whoWeServe: "who-we-serve",

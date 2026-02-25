@@ -6,13 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
-import { DealBulletin } from "@/components/deal-bulletin"
 import { HERO_STATS, MEDIA_MENTIONS, SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
   staggerItem,
-  slideInRight,
   viewportConfig,
 } from "@/lib/animations"
 
@@ -30,8 +28,6 @@ function StatItem({ value, label }: { value: string; label: string }) {
 }
 
 export function Hero() {
-  const words = ["Discover.", "Evaluate.", "Close."]
-
   return (
     <section
       id={SECTION_IDS.hero}
@@ -43,88 +39,72 @@ export function Hero() {
       <GradientOrb className="right-[-10%] top-[30%] h-[400px] w-[400px]" color="accent" />
 
       <Container className="relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Content */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="mx-auto max-w-3xl text-center"
+        >
+          {/* Headline */}
+          <motion.h1
+            variants={fadeInUp}
+            className="font-display font-bold text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.05] tracking-tight text-foreground"
           >
-            {/* Headline */}
-            <div className="mb-6">
-              {words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  variants={fadeInUp}
-                  className="mr-3 inline-block font-display font-bold text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.05] tracking-tight text-foreground last:mr-0 sm:mr-4"
-                >
-                  {i === 2 ? <GradientText>{word}</GradientText> : word}
-                </motion.span>
-              ))}
-            </div>
+            The Private Market{" "}
+            <GradientText>Brokerage.</GradientText>
+          </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p
-              variants={fadeInUp}
-              className="max-w-lg text-lg leading-relaxed text-foreground-muted"
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeInUp}
+            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-muted"
+          >
+            Napkin Deals aggregates dealflow from 50+ sources and uses
+            intent-driven matching to connect the right buyers, sellers, and
+            capital — faster. Advisory. Brokerage. Capital. Deals.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap justify-center gap-4">
+            <Button size="lg" className="rounded-full text-base" asChild>
+              <a href="#contact">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full text-base"
+              asChild
             >
-              The private market brokerage that aggregates dealflow from 50+ sources
-              and uses intent-driven matching to connect the right buyers, sellers,
-              and capital — faster.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="#contact">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full text-base"
-                asChild
-              >
-                <a href="#how-it-works">See How It Works</a>
-              </Button>
-            </motion.div>
-
-            {/* Trust line */}
-            <motion.p
-              variants={fadeInUp}
-              className="mt-6 text-sm text-foreground-subtle"
-            >
-              Free to list. No upfront pressure. Success-fee only.
-            </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              variants={fadeInUp}
-              className="mt-10 flex items-center gap-8 rounded-xl border border-border-subtle bg-card/50 p-6 backdrop-blur-sm"
-            >
-              {HERO_STATS.map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-8">
-                  {i > 0 && (
-                    <div className="h-10 w-px bg-border" />
-                  )}
-                  <StatItem value={stat.value} label={stat.label} />
-                </div>
-              ))}
-            </motion.div>
+              <a href="#how-it-works">See How It Works</a>
+            </Button>
           </motion.div>
 
-          {/* Right: Deal Bulletin */}
-          <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative hidden lg:block"
+          {/* Trust line */}
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 text-sm text-foreground-subtle"
           >
-            <DealBulletin className="w-full max-w-md mx-auto" />
+            Free to list. No upfront pressure. Success-fee only.
+          </motion.p>
+
+          {/* Stats */}
+          <motion.div
+            variants={fadeInUp}
+            className="mx-auto mt-10 inline-flex items-center gap-8 rounded-xl border border-border-subtle bg-card/50 p-6 backdrop-blur-sm"
+          >
+            {HERO_STATS.map((stat, i) => (
+              <div key={stat.label} className="flex items-center gap-8">
+                {i > 0 && (
+                  <div className="h-10 w-px bg-border" />
+                )}
+                <StatItem value={stat.value} label={stat.label} />
+              </div>
+            ))}
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Media Mentions */}
         <motion.div
