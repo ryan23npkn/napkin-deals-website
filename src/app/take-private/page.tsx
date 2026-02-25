@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Script from "next/script"
 import {
   ArrowRight,
   ArrowLeft,
@@ -100,9 +101,27 @@ const PRESETS = [
   },
 ]
 
+function openCalendly() {
+  if (typeof window !== "undefined" && (window as any).Calendly) {
+    ;(window as any).Calendly.initPopupWidget({
+      url: "https://calendly.com/npkn-ryan/take-private-funnel-demo",
+    })
+  }
+}
+
 export default function TakePrivatePage() {
   return (
     <>
+      {/* Calendly popup widget */}
+      <link
+        href="https://assets.calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
+
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 glass border-b border-border/10">
         <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8">
@@ -165,16 +184,11 @@ export default function TakePrivatePage() {
                   candidacy. Built for PE firms, hedge funds, and investment banks.
                 </motion.p>
 
-                <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
+                <motion.div variants={fadeInUp} className="mt-8">
                   <Button size="lg" className="rounded-full text-base" asChild>
                     <a href="https://takeprivate.napkindeals.com/register">
-                      Start Free Trial
+                      Apply for Access
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-                    <a href="#how-it-works">
-                      See How It Works
                     </a>
                   </Button>
                 </motion.div>
@@ -429,17 +443,14 @@ export default function TakePrivatePage() {
                 <Button
                   size="lg"
                   className="rounded-full bg-white text-primary hover:bg-white/90"
-                  asChild
+                  onClick={openCalendly}
                 >
-                  <Link href="/#contact">
-                    Schedule a Demo
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  Schedule a Demo
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="rounded-full border-white/20 text-white hover:bg-white/10"
+                  className="rounded-full border border-white/30 bg-transparent text-white hover:bg-white/10"
                   asChild
                 >
                   <Link href="/#contact">
