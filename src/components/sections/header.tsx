@@ -65,11 +65,11 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
-              <a href="#contact">Schedule a Call</a>
+              <a href="#contact">Free Valuation</a>
             </Button>
             <Button size="sm" className="rounded-full" asChild>
               <a href="https://app.napkindeals.com/login">
-                View Deals
+                Browse Deals
                 <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </a>
             </Button>
@@ -119,12 +119,12 @@ export function Header() {
             >
               <Button variant="outline" className="rounded-full" asChild>
                 <a href="#contact" onClick={() => setMobileOpen(false)}>
-                  Schedule a Call
+                  Free Valuation
                 </a>
               </Button>
               <Button className="rounded-full" asChild>
-                <a href="#contact" onClick={() => setMobileOpen(false)}>
-                  View Deals
+                <a href="https://app.napkindeals.com/login" onClick={() => setMobileOpen(false)}>
+                  Browse Deals
                   <ArrowRight className="ml-1 h-3.5 w-3.5" />
                 </a>
               </Button>

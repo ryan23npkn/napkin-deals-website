@@ -67,12 +67,19 @@ export function Products() {
                 </li>
               ))}
             </ul>
-            <Button size="lg" className="mt-8 rounded-full" asChild>
-              <a href="https://app.napkindeals.com/login">
-                Explore Deals
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button size="lg" className="rounded-full" asChild>
+                <a href="https://app.napkindeals.com/login">
+                  Browse Deals
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full" asChild>
+                <a href="#contact">
+                  Request a Demo
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           <motion.div variants={slideInRight}>
@@ -187,16 +194,23 @@ export function Products() {
               ))}
             </div>
 
-            <Button
-              size="lg"
-              className="mt-8 rounded-full bg-emerald-500 text-white hover:bg-emerald-400"
-              asChild
-            >
-              <a href="/take-private">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="rounded-full bg-emerald-500 text-white hover:bg-emerald-400"
+                asChild
+              >
+                <a href="https://takeprivate.napkindeals.com/register">
+                  Apply for Access
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full" asChild>
+                <a href="/take-private">
+                  See How It Works
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

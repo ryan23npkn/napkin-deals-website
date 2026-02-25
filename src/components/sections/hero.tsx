@@ -67,8 +67,8 @@ export function Hero() {
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="#contact">
-                  Get Started
+                <a href="https://app.napkindeals.com/login">
+                  Browse Deals
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -78,7 +78,7 @@ export function Hero() {
                 className="rounded-full text-base"
                 asChild
               >
-                <a href="#how-it-works">See How It Works</a>
+                <a href="#contact">Get a Free Valuation</a>
               </Button>
             </motion.div>
 
@@ -86,7 +86,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 text-sm text-foreground-subtle"
             >
-              Free to list. No upfront pressure. Success-fee only.
+              Free to list. No exclusivity. Success-fee only.
             </motion.p>
 
             {/* Stats */}
