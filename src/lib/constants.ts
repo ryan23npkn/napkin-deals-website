@@ -253,6 +253,7 @@ export const CONTACT_PHONE = "+1 (555) 123-4567"
 export const FOOTER_LINKS = {
   platform: [
     { label: "Explore Deals", href: "https://app.napkindeals.com/login" },
+    { label: "Take-Private Signals", href: "/take-private" },
     { label: "List a Business", href: "#contact" },
     { label: "Capital Partners", href: "#who-we-serve" },
     { label: "How It Works", href: "#how-it-works" },
