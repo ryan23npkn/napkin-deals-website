@@ -30,6 +30,7 @@ import {
   staggerItem,
   viewportConfig,
 } from "@/lib/animations"
+import { SignalScanner } from "@/components/signal-scanner"
 import { FOOTER_LINKS } from "@/lib/constants"
 
 const FEATURES = [
@@ -128,81 +129,85 @@ export default function TakePrivatePage() {
 
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative overflow-hidden">
+        <section className="relative overflow-hidden bg-background pt-24 pb-16 sm:pt-32">
           <BackgroundPattern variant="dots" />
           <GradientOrb color="primary" className="left-[-10%] top-[10%] h-[500px] w-[500px]" />
           <GradientOrb color="accent" className="right-[-10%] top-[30%] h-[400px] w-[400px]" />
 
-          <Container className="relative py-24 md:py-32 lg:py-40">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-              className="max-w-3xl mx-auto text-center"
-            >
-              <motion.div variants={fadeInUp} className="mb-6">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground-muted shadow-sm">
-                  <TrendingDown className="h-3 w-3 text-primary" />
-                  New from Napkin Deals
-                </span>
-              </motion.div>
-
-              <motion.h1
-                variants={fadeInUp}
-                className="font-display text-[clamp(2.5rem,2rem+3vw,4.25rem)] font-bold tracking-tight leading-[1.08]"
-              >
-                Take-Private{" "}
-                <span className="text-gradient">Signal Intelligence</span>
-              </motion.h1>
-
-              <motion.p
-                variants={fadeInUp}
-                className="mt-6 text-lg leading-relaxed text-foreground-muted max-w-xl mx-auto"
-              >
-                AI-powered screening of 3,000+ public companies for take-private
-                candidacy. Built for PE firms, hedge funds, and investment banks.
-              </motion.p>
-
-              <motion.div variants={fadeInUp} className="mt-10 flex items-center justify-center gap-4">
-                <Button size="lg" className="rounded-full" asChild>
-                  <a href="https://takeprivate.napkindeals.com/register">
-                    Apply for Access
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full" asChild>
-                  <a href="#how-it-works">
-                    See How It Works
-                  </a>
-                </Button>
-              </motion.div>
-
-              {/* Stats */}
+          <Container className="relative">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              {/* Left: Content */}
               <motion.div
-                variants={fadeInUp}
-                className="mt-16 inline-flex items-center gap-8 rounded-xl border border-border-subtle bg-card/50 px-6 py-4 backdrop-blur-sm"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
               >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">3,000+</div>
-                  <div className="text-xs text-foreground-muted mt-0.5">Public Companies</div>
-                </div>
-                <div className="h-10 w-px bg-border" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">7</div>
-                  <div className="text-xs text-foreground-muted mt-0.5">AI Sub-Scores</div>
-                </div>
-                <div className="h-10 w-px bg-border" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">Daily</div>
-                  <div className="text-xs text-foreground-muted mt-0.5">Signal Refresh</div>
-                </div>
-                <div className="h-10 w-px bg-border" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-foreground">$0.009</div>
-                  <div className="text-xs text-foreground-muted mt-0.5">Per Company / Day</div>
-                </div>
+                <motion.div variants={fadeInUp} className="mb-6">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground-muted shadow-sm">
+                    <TrendingDown className="h-3 w-3 text-primary" />
+                    New from Napkin Deals
+                  </span>
+                </motion.div>
+
+                <motion.h1
+                  variants={fadeInUp}
+                  className="font-display text-[clamp(2.5rem,1.75rem+3.75vw,4.25rem)] font-bold tracking-tight leading-[1.05]"
+                >
+                  Take-Private{" "}
+                  <span className="text-gradient">Signal Intelligence</span>
+                </motion.h1>
+
+                <motion.p
+                  variants={fadeInUp}
+                  className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
+                >
+                  AI-powered screening of 3,000+ public companies for take-private
+                  candidacy. Built for PE firms, hedge funds, and investment banks.
+                </motion.p>
+
+                <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
+                  <Button size="lg" className="rounded-full text-base" asChild>
+                    <a href="https://takeprivate.napkindeals.com/register">
+                      Start Free Trial
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+                    <a href="#how-it-works">
+                      See How It Works
+                    </a>
+                  </Button>
+                </motion.div>
+
+                {/* Stats */}
+                <motion.div
+                  variants={fadeInUp}
+                  className="mt-10 inline-flex items-center gap-6 rounded-xl border border-border-subtle bg-card/50 p-5 backdrop-blur-sm sm:gap-8 sm:p-6"
+                >
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground sm:text-3xl">3,000+</div>
+                    <div className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground-muted">Companies</div>
+                  </div>
+                  <div className="h-10 w-px bg-border" />
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground sm:text-3xl">7</div>
+                    <div className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground-muted">AI Sub-Scores</div>
+                  </div>
+                  <div className="h-10 w-px bg-border" />
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground sm:text-3xl">Daily</div>
+                    <div className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground-muted">Signal Refresh</div>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+
+              {/* Right: Signal Scanner animation */}
+              <div className="hidden lg:block">
+                <div className="rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm dark:border-border/30">
+                  <SignalScanner />
+                </div>
+              </div>
+            </div>
           </Container>
         </section>
 
@@ -411,14 +416,14 @@ export default function TakePrivatePage() {
                 variants={fadeInUp}
                 className="font-display text-[clamp(1.875rem,1.5rem+1.875vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-white"
               >
-                Ready to find your next take-private opportunity?
+                See it in action
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
                 className="mt-5 text-lg leading-relaxed text-blue-200/80"
               >
-                Access is limited to qualified institutional buyers. Apply now and
-                our team will review your application within 24 hours.
+                Walk through the platform with our team. We&apos;ll show you how
+                the scoring engine works on real candidates in your target universe.
               </motion.p>
               <motion.div variants={fadeInUp} className="mt-8 flex items-center justify-center gap-4">
                 <Button
@@ -426,10 +431,10 @@ export default function TakePrivatePage() {
                   className="rounded-full bg-white text-primary hover:bg-white/90"
                   asChild
                 >
-                  <a href="https://takeprivate.napkindeals.com/register">
-                    Apply for Access
+                  <Link href="/#contact">
+                    Schedule a Demo
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
