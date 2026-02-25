@@ -164,7 +164,7 @@ export default function TakePrivatePage() {
                 <motion.div variants={fadeInUp} className="mb-6">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground-muted shadow-sm">
                     <TrendingDown className="h-3 w-3 text-primary" />
-                    New from Napkin Deals
+                    Beta — Early Access
                   </span>
                 </motion.div>
 
@@ -439,7 +439,7 @@ export default function TakePrivatePage() {
                 Walk through the platform with our team. We&apos;ll show you how
                 the scoring engine works on real candidates in your target universe.
               </motion.p>
-              <motion.div variants={fadeInUp} className="mt-8 flex items-center justify-center gap-4">
+              <motion.div variants={fadeInUp} className="mt-8">
                 <Button
                   size="lg"
                   className="rounded-full bg-white text-primary hover:bg-white/90"
@@ -447,15 +447,6 @@ export default function TakePrivatePage() {
                 >
                   Schedule a Demo
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button
-                  size="lg"
-                  className="rounded-full border border-white/30 bg-transparent text-white hover:bg-white/10"
-                  asChild
-                >
-                  <Link href="/#contact">
-                    Contact Us
-                  </Link>
                 </Button>
               </motion.div>
             </motion.div>
