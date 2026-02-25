@@ -35,18 +35,18 @@ export const SECTION_IDS = {
 
 // ========== HERO ==========
 export const HERO_STATS = [
-  { value: "$2.1B+", label: "Deal Flow" },
-  { value: "500+", label: "Businesses" },
-  { value: "50+", label: "Sources" },
+  { value: "$4.6B+", label: "Deal Flow" },
+  { value: "400+", label: "Opportunities" },
+  { value: "30+", label: "Sources" },
 ] as const
 
-export const MEDIA_MENTIONS = [
-  "CNBC",
-  "Financial Times",
-  "Forbes",
-  "TechCrunch",
-  "Yahoo Finance",
-  "Business Insider",
+export const AGGREGATION_SOURCES = [
+  "BizBuySell",
+  "Empire Flippers",
+  "Acquire.com",
+  "Flippa",
+  "DealStream",
+  "BusinessBroker.net",
 ] as const
 
 export interface DealItem {
@@ -58,14 +58,14 @@ export interface DealItem {
 }
 
 export const DEAL_BULLETIN_ITEMS: DealItem[] = [
-  { title: "SaaS Platform — Customer Success", industry: "Technology", revenue: "$4.2M ARR", type: "Full Acquisition", status: "Active" },
-  { title: "Healthcare Staffing Agency", industry: "Healthcare", revenue: "$8.1M Rev", type: "Majority Stake", status: "New" },
-  { title: "E-commerce Brand — DTC Skincare", industry: "Consumer", revenue: "$2.8M Rev", type: "Full Acquisition", status: "Active" },
-  { title: "Managed IT Services Provider", industry: "Technology", revenue: "$5.5M ARR", type: "Growth Capital", status: "Under LOI" },
-  { title: "Commercial Cleaning Franchise", industry: "Services", revenue: "$3.2M Rev", type: "Full Acquisition", status: "New" },
-  { title: "Digital Marketing Agency", industry: "Media", revenue: "$1.9M Rev", type: "Merger", status: "Active" },
-  { title: "Industrial Supply Distribution", industry: "Manufacturing", revenue: "$12M Rev", type: "Majority Stake", status: "New" },
-  { title: "Fitness Studio Chain — 4 Locations", industry: "Health & Wellness", revenue: "$2.1M Rev", type: "Full Acquisition", status: "Active" },
+  { title: "B2B SaaS — Subscription Analytics", industry: "Information Technology", revenue: "$3.8M ARR", type: "Acquisition", status: "Active" },
+  { title: "Healthcare Staffing Network", industry: "Healthcare", revenue: "$6.2M Rev", type: "Investment", status: "New" },
+  { title: "DTC E-Commerce — Pet Supplies", industry: "Consumer Discretionary", revenue: "$2.1M Rev", type: "Acquisition", status: "Active" },
+  { title: "Managed IT Services Provider", industry: "Information Technology", revenue: "$4.8M ARR", type: "Investment", status: "Under LOI" },
+  { title: "Commercial HVAC Services", industry: "Industrials", revenue: "$3.5M Rev", type: "Acquisition", status: "New" },
+  { title: "Content Marketing Agency", industry: "Communication Services", revenue: "$1.7M Rev", type: "Merger", status: "Active" },
+  { title: "Industrial Packaging Distributor", industry: "Materials", revenue: "$9.4M Rev", type: "Acquisition", status: "New" },
+  { title: "Mobile App — Fitness & Wellness", industry: "Consumer Discretionary", revenue: "$1.4M ARR", type: "Asset Sale", status: "Active" },
 ]
 
 // ========== ABCD MODEL ==========
@@ -88,7 +88,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "B",
     title: "Brokerage",
     description:
-      "Full-service M&A brokerage connecting qualified buyers with vetted deal opportunities. Our platform aggregates listings from 50+ sources and uses intent-driven matching to surface the right deals.",
+      "Full-service M&A brokerage connecting qualified buyers with vetted deal opportunities. Our platform aggregates listings from 30+ sources and uses intent-driven matching to surface the right deals.",
     Icon: Target,
   },
   {
@@ -102,7 +102,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "D",
     title: "Deals",
     description:
-      "Our global deal platform surfaces opportunities across 15+ countries and 30+ industries. AI-powered filtering, intent signals, and real-time alerts help you move faster than the market.",
+      "Our deal platform surfaces opportunities across 6 regions and 11 GICS sectors. AI-powered filtering, intent signals, and real-time alerts help you move faster than the market.",
     Icon: Globe,
   },
 ]
@@ -169,8 +169,8 @@ export const AUDIENCES: AudienceItem[] = [
     title: "Buyers & Acquirers",
     subtitle: "Find your next deal",
     description:
-      "Access aggregated dealflow from 50+ sources with AI-powered filtering. Set intent signals, receive real-time alerts, and engage with sellers directly through our platform.",
-    features: ["50+ deal sources", "AI matching", "Intent signals", "Real-time alerts"],
+      "Access aggregated dealflow from 30+ sources with AI-powered filtering. Set intent signals, receive real-time alerts, and engage with sellers directly through our platform.",
+    features: ["30+ deal sources", "AI matching", "Intent signals", "Real-time alerts"],
     Icon: Users,
     cta: "Explore Deals",
     href: "https://app.napkindeals.com/login",
@@ -208,8 +208,8 @@ export const DIFFERENTIATORS: DifferentiatorItem[] = [
   {
     title: "Aggregated, Not Fragmented",
     description:
-      "Stop searching dozens of platforms. We aggregate opportunities from 50+ sources into a single, filterable feed with standardized data.",
-    metric: "50+ sources",
+      "Stop searching dozens of platforms. We aggregate opportunities from 30+ sources — including BizBuySell, Empire Flippers, Acquire.com, and more — into a single, filterable feed.",
+    metric: "30+ sources",
     Icon: RefreshCw,
   },
   {
@@ -229,14 +229,14 @@ export const DIFFERENTIATORS: DifferentiatorItem[] = [
 ]
 
 export const TRUST_INDUSTRIES = [
-  "B2B SaaS",
+  "Information Technology",
   "Healthcare",
-  "E-commerce",
-  "Manufacturing",
-  "Professional Services",
-  "Technology",
-  "Financial Services",
-  "Logistics",
+  "Financials",
+  "Consumer Discretionary",
+  "Communication Services",
+  "Industrials",
+  "Consumer Staples",
+  "Real Estate",
 ] as const
 
 // ========== CONTACT ==========

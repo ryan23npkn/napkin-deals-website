@@ -69,36 +69,36 @@ function ScoreBar({ score, delay }: { score: number; delay: number }) {
 
 const COMPANIES = [
   {
-    ticker: "ACME",
-    name: "Acme Industrial",
-    score: 87,
+    ticker: "KSS",
+    name: "Kohl's Corporation",
+    score: 85,
     status: "Hot",
     statusColor: "text-success",
     statusBg: "bg-success/10",
   },
   {
-    ticker: "BRKS",
-    name: "Brooks Automation",
-    score: 72,
+    ticker: "WBA",
+    name: "Walgreens Boots",
+    score: 82,
+    status: "Hot",
+    statusColor: "text-success",
+    statusBg: "bg-success/10",
+  },
+  {
+    ticker: "NXST",
+    name: "Nexstar Media",
+    score: 80,
     status: "Watch",
     statusColor: "text-accent",
     statusBg: "bg-accent/10",
   },
   {
-    ticker: "CNVO",
-    name: "Convora Systems",
-    score: 58,
-    status: "Neutral",
-    statusColor: "text-foreground-muted",
-    statusBg: "bg-foreground-muted/10",
-  },
-  {
-    ticker: "PLXR",
-    name: "Plexar Health",
-    score: 91,
-    status: "Hot",
-    statusColor: "text-success",
-    statusBg: "bg-success/10",
+    ticker: "DLTR",
+    name: "Dollar Tree",
+    score: 78,
+    status: "Watch",
+    statusColor: "text-accent",
+    statusBg: "bg-accent/10",
   },
 ]
 
@@ -195,7 +195,7 @@ export function SignalScanner({ className }: { className?: string }) {
       >
         <div className="flex items-center justify-between mb-1.5">
           <span className="text-[10px] font-medium text-foreground-muted">
-            Scanning 3,247 companies...
+            Scanning 5,000+ companies...
           </span>
           <span className="text-[10px] font-bold tabular-nums text-primary">
             <AnimatedScore target={100} delay={2.2} />%

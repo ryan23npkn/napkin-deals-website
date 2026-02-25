@@ -169,7 +169,7 @@ export default function TakePrivatePage() {
                   variants={fadeInUp}
                   className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
                 >
-                  AI-powered screening of 3,000+ public companies for take-private
+                  AI-powered screening of 5,000+ public companies for take-private
                   candidacy. Built for PE firms, hedge funds, and investment banks.
                 </motion.p>
 
@@ -188,7 +188,7 @@ export default function TakePrivatePage() {
                   className="mt-10 inline-flex items-center gap-6 rounded-xl border border-border-subtle bg-card/50 p-5 backdrop-blur-sm sm:gap-8 sm:p-6"
                 >
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-foreground sm:text-3xl">3,000+</div>
+                    <div className="text-2xl font-bold text-foreground sm:text-3xl">5,000+</div>
                     <div className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground-muted">Companies</div>
                   </div>
                   <div className="h-10 w-px bg-border" />

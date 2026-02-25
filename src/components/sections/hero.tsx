@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { DealPipeline } from "@/components/deal-pipeline"
-import { HERO_STATS, MEDIA_MENTIONS, SECTION_IDS } from "@/lib/constants"
+import { HERO_STATS, AGGREGATION_SOURCES, SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
@@ -60,7 +60,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
             >
-              Napkin Deals aggregates dealflow from 50+ sources and uses
+              Napkin Deals aggregates dealflow from 30+ sources and uses
               intent-driven matching to connect the right buyers, sellers, and
               capital — faster. Advisory. Brokerage. Capital. Deals.
             </motion.p>
@@ -134,10 +134,10 @@ export function Hero() {
             variants={staggerItem}
             className="mb-6 text-center text-xs font-medium uppercase tracking-widest text-foreground-subtle"
           >
-            As seen in
+            Aggregating from
           </motion.p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {MEDIA_MENTIONS.map((name) => (
+            {AGGREGATION_SOURCES.map((name) => (
               <motion.span
                 key={name}
                 variants={staggerItem}

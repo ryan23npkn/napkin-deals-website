@@ -50,13 +50,13 @@ export function Products() {
             </h3>
             <p className="mt-4 text-base leading-relaxed text-foreground-muted">
               A live, curated feed of private market opportunities aggregated
-              from 50+ sources. AI-powered filtering surfaces deals that match
+              from 30+ sources. AI-powered filtering surfaces deals that match
               your acquisition criteria, investment thesis, and geographic focus
               — all in one place.
             </p>
             <ul className="mt-6 space-y-2.5">
               {[
-                "500+ active listings across 30+ industries",
+                "400+ deals across 11 GICS sectors",
                 "AI-matched recommendations based on your intent signals",
                 "Real-time alerts for new and updated opportunities",
                 "NDA-protected engagement with sellers",
@@ -118,15 +118,15 @@ export function Products() {
                     Take-Private Score
                   </span>
                 </div>
-                <span className="text-xs text-foreground-subtle">3,000+ companies</span>
+                <span className="text-xs text-foreground-subtle">5,000+ companies</span>
               </div>
               {/* Sample scores */}
               <div className="space-y-3">
                 {[
-                  { name: "ACME Corp", score: 87, industry: "Technology", mcap: "$420M" },
-                  { name: "Beacon Health", score: 82, industry: "Healthcare", mcap: "$310M" },
-                  { name: "Summit Mfg", score: 79, industry: "Industrials", mcap: "$680M" },
-                  { name: "Apex Retail", score: 74, industry: "Consumer", mcap: "$195M" },
+                  { name: "Kohl's Corp", score: 85, industry: "Consumer Discretionary", mcap: "$2.4B" },
+                  { name: "Walgreens Boots", score: 82, industry: "Healthcare", mcap: "$8.9B" },
+                  { name: "Nexstar Media", score: 80, industry: "Communication Svcs", mcap: "$5.2B" },
+                  { name: "Dollar Tree", score: 78, industry: "Consumer Staples", mcap: "$14.2B" },
                 ].map((company) => (
                   <div
                     key={company.name}
@@ -158,7 +158,7 @@ export function Products() {
               </div>
               {/* Score dimensions preview */}
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {["Valuation", "FCF", "Debt Capacity", "Governance", "Activist", "Strategic", "Moat"].map(
+                {["Valuation", "FCF", "Debt Capacity", "Governance", "Activist", "Strategic", "Market Position"].map(
                   (dim) => (
                     <span
                       key={dim}
@@ -187,7 +187,7 @@ export function Products() {
               Take-Private Signal Intelligence
             </h3>
             <p className="mt-4 text-base leading-relaxed text-foreground-muted">
-              AI-powered screening of 3,000+ public companies for take-private
+              AI-powered screening of 5,000+ public companies for take-private
               candidacy. SEC filings, governance analysis, activist tracking, and
               LBO modeling — built for PE firms, hedge funds, and investment banks.
             </p>
