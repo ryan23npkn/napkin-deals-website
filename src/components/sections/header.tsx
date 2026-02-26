@@ -195,7 +195,7 @@ export function Header() {
               <Link href="/valuation">Free Valuation</Link>
             </Button>
             <Button size="sm" className="rounded-full" asChild>
-              <a href="https://app.napkindeals.com/login">
+              <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
                 Browse Deals
                 <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </a>
@@ -309,7 +309,9 @@ export function Header() {
               </Button>
               <Button className="rounded-full" asChild>
                 <a
-                  href="https://app.napkindeals.com/login"
+                  href="https://app.napkindeals.com/browse"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMobile}
                 >
                   Browse Deals

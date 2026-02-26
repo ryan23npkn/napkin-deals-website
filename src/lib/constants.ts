@@ -48,7 +48,7 @@ export const MEGA_MENU: MegaMenuGroup[] = [
   {
     label: "Products",
     items: [
-      { label: "Deal Bulletin", description: "Aggregated dealflow from 30+ sources", href: "https://app.napkindeals.com/register", Icon: BarChart3 },
+      { label: "Deal Bulletin", description: "Aggregated dealflow from 30+ sources", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
       { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
       { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "/valuation", Icon: Calculator },
     ],
