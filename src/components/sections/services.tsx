@@ -6,34 +6,15 @@ import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
 import { SectionHeader } from "@/components/ui/section-header"
 import { BackgroundPattern } from "@/components/ui/background-pattern"
-import { ABCD_ITEMS, SECTION_IDS } from "@/lib/constants"
+import { ABCD_ITEMS, SERVICES_OUTCOMES, SECTION_IDS } from "@/lib/constants"
 import { fadeInUp, slideInLeft, viewportConfig } from "@/lib/animations"
 
-const MOCKUP_CONTENT = [
-  {
-    title: "Advisory Dashboard",
-    items: ["Client valuation tracker", "Market comps analysis", "Exit timeline planning", "NDA management"],
-  },
-  {
-    title: "Brokerage Platform",
-    items: ["Deal matching engine", "Buyer qualification", "Offer comparison tool", "Closing coordinator"],
-  },
-  {
-    title: "Capital Deployment",
-    items: ["Investment thesis matching", "Due diligence pipeline", "Term sheet builder", "Portfolio analytics"],
-  },
-  {
-    title: "Global Deal Feed",
-    items: ["50+ source aggregation", "AI-powered filtering", "Intent signal tracking", "Real-time alerts"],
-  },
-]
-
-export function HowItWorks() {
+export function Services() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
     <section
-      id={SECTION_IDS.howItWorks}
+      id={SECTION_IDS.services}
       className="section-padding relative overflow-hidden bg-[oklch(0.175_0.035_250)] text-white"
     >
       <BackgroundPattern variant="dots" className="opacity-[0.04]" />
@@ -49,7 +30,7 @@ export function HowItWorks() {
 
       <Container className="relative">
         <SectionHeader
-          eyebrow="How It Works"
+          eyebrow="Services"
           title="The ABCD Model"
           description="Four integrated service lines that cover every angle of private market dealmaking."
           align="center"
@@ -127,7 +108,7 @@ export function HowItWorks() {
             </div>
           </motion.div>
 
-          {/* Right: Interactive mockup */}
+          {/* Right: Outcome panel */}
           <motion.div
             variants={fadeInUp}
             initial="hidden"
@@ -147,12 +128,12 @@ export function HowItWorks() {
                 <div className="mb-4 flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-accent" />
                   <span className="text-xs font-medium uppercase tracking-wider text-white/50">
-                    {MOCKUP_CONTENT[activeIndex].title}
+                    {SERVICES_OUTCOMES[activeIndex].title}
                   </span>
                 </div>
 
                 <div className="space-y-3">
-                  {MOCKUP_CONTENT[activeIndex].items.map((item, i) => (
+                  {SERVICES_OUTCOMES[activeIndex].items.map((item, i) => (
                     <motion.div
                       key={item}
                       initial={{ opacity: 0, x: 12 }}

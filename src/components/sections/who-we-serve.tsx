@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Badge } from "@/components/ui/badge"
-import { AUDIENCES, SECTION_IDS } from "@/lib/constants"
+import { AUDIENCES, INDUSTRIES, SECTION_IDS } from "@/lib/constants"
 import { staggerContainer, staggerItem, viewportConfig } from "@/lib/animations"
 
 export function WhoWeServe() {
@@ -76,6 +76,41 @@ export function WhoWeServe() {
             </motion.div>
           )
         })}
+      </motion.div>
+
+      {/* Industries */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+        className="mt-16"
+      >
+        <motion.p
+          variants={staggerItem}
+          className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-foreground-subtle"
+        >
+          Industries We Serve
+        </motion.p>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {INDUSTRIES.map((industry) => {
+            const Icon = industry.Icon
+            return (
+              <motion.div
+                key={industry.name}
+                variants={staggerItem}
+                className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center transition-shadow hover:shadow-md"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Icon className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-sm font-medium text-foreground-muted">
+                  {industry.name}
+                </span>
+              </motion.div>
+            )
+          })}
+        </div>
       </motion.div>
     </Section>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, TrendingDown } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { SECTION_IDS } from "@/lib/constants"
@@ -32,7 +32,7 @@ export function CallToAction() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
-          className="grid gap-6 md:grid-cols-3"
+          className="grid gap-6 md:grid-cols-2"
         >
           {/* Sellers */}
           <motion.div
@@ -67,7 +67,7 @@ export function CallToAction() {
               Looking for your next acquisition?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              Access aggregated dealflow from 50+ sources. AI-powered matching
+              Access aggregated dealflow from 30+ sources. AI-powered matching
               surfaces opportunities aligned with your investment criteria.
             </p>
             <Button
@@ -77,37 +77,6 @@ export function CallToAction() {
             >
               <a href="https://app.napkindeals.com/login">
                 Explore Deals
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </motion.div>
-
-          {/* Take-Private Funnel */}
-          <motion.div
-            variants={fadeInUp}
-            className="rounded-xl border border-emerald-400/20 bg-emerald-400/[0.07] p-8 backdrop-blur-sm"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <TrendingDown className="h-5 w-5 text-emerald-300" />
-              <span className="text-[10px] font-bold tracking-wider uppercase text-emerald-300">
-                New Product
-              </span>
-            </div>
-            <h3 className="font-display font-bold text-2xl text-white">
-              Take-Private Signal Intelligence
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              AI-powered screening of 3,000+ public companies for take-private
-              candidacy. SEC filings, governance analysis, activist tracking, and
-              LBO modeling — built for institutional buyers.
-            </p>
-            <Button
-              size="lg"
-              className="mt-6 rounded-full bg-emerald-400 text-gray-900 hover:bg-emerald-300"
-              asChild
-            >
-              <a href="/take-private">
-                Apply for Access
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

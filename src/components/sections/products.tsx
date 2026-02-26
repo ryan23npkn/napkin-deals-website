@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
 import { DealBulletin } from "@/components/deal-bulletin"
-import { SECTION_IDS } from "@/lib/constants"
+import { BULLETIN_STATS, SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
@@ -67,6 +67,21 @@ export function Products() {
                 </li>
               ))}
             </ul>
+            {/* Platform stats */}
+            <div className="mt-6 flex items-center gap-6 sm:gap-8">
+              {BULLETIN_STATS.map((stat, i) => (
+                <div key={stat.label} className="flex items-center gap-6 sm:gap-8">
+                  {i > 0 && <div className="h-8 w-px bg-border" />}
+                  <div>
+                    <p className="text-lg font-bold tracking-tight text-foreground">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs text-foreground-muted">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" className="rounded-full" asChild>
                 <a href="https://app.napkindeals.com/login">

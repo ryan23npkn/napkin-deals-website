@@ -3,50 +3,53 @@ import {
   Target,
   DollarSign,
   Globe,
-  Zap,
-  RefreshCw,
-  Shield,
   Users,
   Building2,
   TrendingUp,
+  Monitor,
+  HeartPulse,
+  ShoppingCart,
+  Factory,
+  Handshake,
+  Search,
+  ShieldCheck,
+  Trophy,
   type LucideIcon,
 } from "lucide-react"
 
 // ========== NAVIGATION ==========
 export const NAV_LINKS = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Products", href: "#products" },
+  { label: "Services", href: "#services" },
+  { label: "The Difference", href: "#napkin-difference" },
   { label: "Who We Serve", href: "#who-we-serve" },
-  { label: "Why Napkin", href: "#why-napkin" },
+  { label: "Products", href: "#products" },
   { label: "Contact", href: "#contact" },
 ] as const
 
 export const SECTION_IDS = {
   hero: "hero",
-  howItWorks: "how-it-works",
-  products: "products",
-  process: "process",
-  beforeAfter: "before-after",
+  services: "services",
+  napkinDifference: "napkin-difference",
   whoWeServe: "who-we-serve",
-  whyNapkin: "why-napkin",
+  products: "products",
+  faq: "faq",
   cta: "cta",
   contact: "contact",
 } as const
 
 // ========== HERO ==========
 export const HERO_STATS = [
+  { value: "More Buyers", label: "1,000+ strategic matches via AI" },
+  { value: "Higher Offers", label: "Competitive process drives price" },
+  { value: "Faster Close", label: "Weeks, not months" },
+  { value: "$0 Upfront", label: "Success-fee only" },
+] as const
+
+// ========== DEAL BULLETIN ==========
+export const BULLETIN_STATS = [
   { value: "$4.6B+", label: "Deal Flow" },
   { value: "400+", label: "Opportunities" },
   { value: "30+", label: "Sources" },
-] as const
-
-export const AGGREGATION_SOURCES = [
-  "BizBuySell",
-  "Empire Flippers",
-  "Acquire.com",
-  "Flippa",
-  "DealStream",
-  "BusinessBroker.net",
 ] as const
 
 export interface DealItem {
@@ -68,7 +71,7 @@ export const DEAL_BULLETIN_ITEMS: DealItem[] = [
   { title: "Mobile App — Fitness & Wellness", industry: "Consumer Discretionary", revenue: "$1.4M ARR", type: "Asset Sale", status: "Active" },
 ]
 
-// ========== ABCD MODEL ==========
+// ========== ABCD MODEL / SERVICES ==========
 export interface ABCDItem {
   letter: string
   title: string
@@ -107,40 +110,111 @@ export const ABCD_ITEMS: ABCDItem[] = [
   },
 ]
 
-// ========== PROCESS FLOW ==========
-export const PROCESS_OUTCOMES = [
-  { value: "1,000+", label: "Identified Buyers" },
-  { value: "120+", label: "NDAs Signed" },
-  { value: "20+", label: "Meetings Set" },
-  { value: "5-10", label: "Qualified Offers" },
-] as const
-
-// ========== BEFORE/AFTER ==========
-export const OLD_WAY_ITEMS = [
-  "Cold outreach with low response rates",
-  "Fragmented deal sources across dozens of platforms",
-  "Weeks spent filtering irrelevant opportunities",
-  "No visibility into buyer intent or engagement",
-  "Manual NDA and meeting coordination",
-] as const
-
-export const NAPKIN_WAY_METRICS = {
-  offers: 8,
-  meetings: 4,
-  ndas: 22,
-} as const
-
-export interface OfferItem {
-  buyer: string
-  amount: string
-  structure: string
+export interface ServiceOutcome {
+  title: string
+  items: string[]
 }
 
-export const NAPKIN_WAY_OFFERS: OfferItem[] = [
-  { buyer: "Alpine Growth Partners", amount: "$4.2M", structure: "All Cash" },
-  { buyer: "Meridian Capital Group", amount: "$3.8M", structure: "80/20 Earn-out" },
-  { buyer: "Westfield Acquisitions", amount: "$4.5M", structure: "Seller Financing" },
-  { buyer: "Beacon Hill Equity", amount: "$3.9M", structure: "All Cash" },
+export const SERVICES_OUTCOMES: ServiceOutcome[] = [
+  {
+    title: "Advisory Outcomes",
+    items: [
+      "Institutional-grade exit process",
+      "Dedicated advisor from start to close",
+      "Optimal valuation through competitive positioning",
+      "Complete confidentiality throughout",
+    ],
+  },
+  {
+    title: "Brokerage Outcomes",
+    items: [
+      "Access to every private market deal in one place",
+      "AI-matched opportunities to your criteria",
+      "Qualified counterparties, not tire-kickers",
+      "Full deal lifecycle support",
+    ],
+  },
+  {
+    title: "Capital Outcomes",
+    items: [
+      "Right capital partner for your specific deal",
+      "Aligned investment thesis matching",
+      "Efficient fundraising process",
+      "Terms that work for your business",
+    ],
+  },
+  {
+    title: "Deals Outcomes",
+    items: [
+      "See opportunities before anyone else",
+      "Deals matched to your exact criteria",
+      "Move faster than the market",
+      "One platform, not thirty tabs",
+    ],
+  },
+]
+
+// ========== THE NAPKIN DIFFERENCE ==========
+export interface NapkinDifferenceItem {
+  metric: string
+  title: string
+  description: string
+}
+
+export const NAPKIN_DIFFERENCE_ITEMS: NapkinDifferenceItem[] = [
+  {
+    metric: "Success-fee only",
+    title: "Aligned incentives",
+    description: "No upfront costs. We earn when you close.",
+  },
+  {
+    metric: "Weeks, not months",
+    title: "Compressed timelines",
+    description: "Qualified offers faster than traditional brokers.",
+  },
+  {
+    metric: "30+ sources",
+    title: "Aggregation advantage",
+    description: "Every private market deal in one platform.",
+  },
+  {
+    metric: "No exclusivity",
+    title: "Seller-friendly terms",
+    description: "List your business and keep full control.",
+  },
+]
+
+export interface ApproachPillar {
+  title: string
+  description: string
+  Icon: LucideIcon
+}
+
+export const APPROACH_PILLARS: ApproachPillar[] = [
+  {
+    title: "Dedicated M&A Guidance",
+    description:
+      "End-to-end support from an experienced advisor who manages the entire process, from preparation to close.",
+    Icon: Handshake,
+  },
+  {
+    title: "AI-Powered Matching",
+    description:
+      "Our platform pinpoints the right counterparties from 30+ sources based on your criteria, thesis, and intent signals.",
+    Icon: Search,
+  },
+  {
+    title: "Qualified Engagement",
+    description:
+      "Every buyer and seller is vetted. NDAs are automated. Meetings are set with high-intent, qualified parties only.",
+    Icon: ShieldCheck,
+  },
+  {
+    title: "Competitive Offers",
+    description:
+      "A structured process drives multiple offers, ensuring you get the best terms — not just the first ones.",
+    Icon: Trophy,
+  },
 ]
 
 // ========== WHO WE SERVE ==========
@@ -187,57 +261,53 @@ export const AUDIENCES: AudienceItem[] = [
   },
 ]
 
-// ========== WHY NAPKIN ==========
-export interface DifferentiatorItem {
-  title: string
-  description: string
-  metric?: string
+export interface IndustryItem {
+  name: string
   Icon: LucideIcon
-  featured?: boolean
 }
 
-export const DIFFERENTIATORS: DifferentiatorItem[] = [
-  {
-    title: "Speed & Responsiveness",
-    description:
-      "We move at the speed of the deal. Real-time alerts, same-day NDA processing, and direct engagement tools mean you never miss an opportunity.",
-    metric: "24hr avg response",
-    Icon: Zap,
-    featured: true,
-  },
-  {
-    title: "Aggregated, Not Fragmented",
-    description:
-      "Stop searching dozens of platforms. We aggregate opportunities from 30+ sources — including BizBuySell, Empire Flippers, Acquire.com, and more — into a single, filterable feed.",
-    metric: "30+ sources",
-    Icon: RefreshCw,
-  },
-  {
-    title: "Intent-Driven Engagement",
-    description:
-      "Our platform tracks buyer intent signals — what you search, save, and engage with — to surface increasingly relevant opportunities over time.",
-    metric: "3x match accuracy",
-    Icon: Target,
-  },
-  {
-    title: "No Upfront Pressure",
-    description:
-      "Free to list. No exclusivity. No hidden fees. We earn our success fee only when you close, aligning our incentives with yours.",
-    metric: "Success-fee only",
-    Icon: Shield,
-  },
+export const INDUSTRIES: IndustryItem[] = [
+  { name: "Technology & SaaS", Icon: Monitor },
+  { name: "Healthcare & Life Sciences", Icon: HeartPulse },
+  { name: "Consumer & E-Commerce", Icon: ShoppingCart },
+  { name: "Business Services", Icon: Briefcase },
+  { name: "Industrials & Manufacturing", Icon: Factory },
+  { name: "Real Estate", Icon: Building2 },
 ]
 
-export const TRUST_INDUSTRIES = [
-  "Information Technology",
-  "Healthcare",
-  "Financials",
-  "Consumer Discretionary",
-  "Communication Services",
-  "Industrials",
-  "Consumer Staples",
-  "Real Estate",
-] as const
+// ========== FAQ ==========
+export interface FAQItem {
+  question: string
+  answer: string
+}
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    question: "What is Napkin Deals?",
+    answer:
+      "Napkin Deals is a modern private market brokerage that combines M&A advisory expertise with technology. We aggregate dealflow from 30+ sources and use AI-driven matching to connect buyers, sellers, and capital providers faster than traditional brokers.",
+  },
+  {
+    question: "How does Napkin Deals find buyers?",
+    answer:
+      "We aggregate opportunities from over 30 deal sources including BizBuySell, Empire Flippers, Acquire.com, and more. Our platform uses AI matching, intent signals, and real-time alerts to surface the right counterparties for every deal.",
+  },
+  {
+    question: "What kinds of businesses does Napkin Deals work with?",
+    answer:
+      "We work with SMBs across multiple industries and deal sizes, including Technology & SaaS, Healthcare, Consumer & E-Commerce, Business Services, Industrials, and Real Estate. Whether you are buying, selling, or raising capital, our platform supports the full deal lifecycle.",
+  },
+  {
+    question: "How do fees work?",
+    answer:
+      "Napkin Deals operates on a success-fee only model. There are no upfront costs, no retainers, and no exclusivity requirements. We earn our fee only when your deal closes, which aligns our incentives directly with yours.",
+  },
+  {
+    question: "How fast is the process?",
+    answer:
+      "Our platform delivers qualified offers in weeks, not months. By aggregating deal sources and automating buyer qualification, NDA management, and matching, we compress the traditional M&A timeline significantly.",
+  },
+]
 
 // ========== CONTACT ==========
 export const INTEREST_OPTIONS = [
@@ -257,13 +327,13 @@ export const FOOTER_LINKS = {
     { label: "Take-Private Signals", href: "/take-private" },
     { label: "List a Business", href: "#contact" },
     { label: "Capital Partners", href: "#who-we-serve" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "Services", href: "#services" },
   ],
   company: [
     { label: "About Us", href: "#" },
-    { label: "Our Approach", href: "#why-napkin" },
+    { label: "The Difference", href: "#napkin-difference" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
-    { label: "Careers", href: "#" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },

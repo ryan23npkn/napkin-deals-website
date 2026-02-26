@@ -7,26 +7,12 @@ import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { DealPipeline } from "@/components/deal-pipeline"
-import { HERO_STATS, AGGREGATION_SOURCES, SECTION_IDS } from "@/lib/constants"
+import { HERO_STATS, SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
-  staggerItem,
   viewportConfig,
 } from "@/lib/animations"
-
-function StatItem({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="text-center">
-      <p className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-        {value}
-      </p>
-      <p className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground-muted">
-        {label}
-      </p>
-    </div>
-  )
-}
 
 export function Hero() {
   return (
@@ -60,9 +46,8 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
             >
-              Napkin Deals aggregates dealflow from 30+ sources and uses
-              intent-driven matching to connect the right buyers, sellers, and
-              capital — faster. Advisory. Brokerage. Capital. Deals.
+              More buyers. Better offers. Less noise. Qualified offers in
+              weeks, not months — every private market deal in one place.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
@@ -89,17 +74,19 @@ export function Hero() {
               Free to list. No exclusivity. Success-fee only.
             </motion.p>
 
-            {/* Stats */}
+            {/* Outcome Stats */}
             <motion.div
               variants={fadeInUp}
-              className="mt-10 inline-flex items-center gap-6 rounded-xl border border-border-subtle bg-card/50 p-5 backdrop-blur-sm sm:gap-8 sm:p-6"
+              className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6"
             >
-              {HERO_STATS.map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-6 sm:gap-8">
-                  {i > 0 && (
-                    <div className="h-10 w-px bg-border" />
-                  )}
-                  <StatItem value={stat.value} label={stat.label} />
+              {HERO_STATS.map((stat) => (
+                <div key={stat.value}>
+                  <p className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-0.5 text-xs text-foreground-muted">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -121,33 +108,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Media Mentions */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
-          className="mt-20 border-t border-border-subtle pt-10"
-        >
-          <motion.p
-            variants={staggerItem}
-            className="mb-6 text-center text-xs font-medium uppercase tracking-widest text-foreground-subtle"
-          >
-            Aggregating from
-          </motion.p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {AGGREGATION_SOURCES.map((name) => (
-              <motion.span
-                key={name}
-                variants={staggerItem}
-                className="text-sm font-semibold text-foreground-subtle/60 transition-colors hover:text-foreground-muted"
-              >
-                {name}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
       </Container>
     </section>
   )
