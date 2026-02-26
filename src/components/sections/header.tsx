@@ -10,8 +10,8 @@ import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { MEGA_MENU } from "@/lib/constants"
 
-function isExternal(href: string) {
-  return href.startsWith("http")
+function useNativeAnchor(href: string) {
+  return href.startsWith("http") || href.includes("#")
 }
 
 function NavLink({
@@ -25,7 +25,7 @@ function NavLink({
   className?: string
   onClick?: () => void
 }) {
-  if (isExternal(href)) {
+  if (useNativeAnchor(href)) {
     return (
       <a href={href} className={className} onClick={onClick}>
         {children}
