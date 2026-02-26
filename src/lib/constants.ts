@@ -14,17 +14,54 @@ import {
   Search,
   ShieldCheck,
   Trophy,
+  BarChart3,
+  TrendingDown,
+  Calculator,
+  HelpCircle,
+  Mail,
   type LucideIcon,
 } from "lucide-react"
 
 // ========== NAVIGATION ==========
-export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "The Difference", href: "#napkin-difference" },
-  { label: "Who We Serve", href: "#who-we-serve" },
-  { label: "Products", href: "#products" },
-  { label: "Contact", href: "#contact" },
-] as const
+export interface MegaMenuItem {
+  label: string
+  description: string
+  href: string
+  Icon: LucideIcon
+}
+
+export interface MegaMenuGroup {
+  label: string
+  items: MegaMenuItem[]
+}
+
+export const MEGA_MENU: MegaMenuGroup[] = [
+  {
+    label: "Services",
+    items: [
+      { label: "Advisory", description: "Selective M&A advisory for guided exits", href: "/#services", Icon: Briefcase },
+      { label: "Brokerage", description: "Full-service deal matching from 30+ sources", href: "/#services", Icon: Target },
+      { label: "Capital", description: "Growth equity and acquisition financing", href: "/#services", Icon: DollarSign },
+      { label: "Deals", description: "AI-powered deal discovery across sectors", href: "/#services", Icon: Globe },
+    ],
+  },
+  {
+    label: "Products",
+    items: [
+      { label: "Deal Bulletin", description: "Aggregated dealflow from 30+ sources", href: "https://app.napkindeals.com/login", Icon: BarChart3 },
+      { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
+      { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "/valuation", Icon: Calculator },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      { label: "Our Approach", description: "The Napkin Deals difference", href: "/#napkin-difference", Icon: Handshake },
+      { label: "FAQ", description: "Common questions answered", href: "/#faq", Icon: HelpCircle },
+      { label: "Contact", description: "Get in touch with our team", href: "/#contact", Icon: Mail },
+    ],
+  },
+]
 
 export const SECTION_IDS = {
   hero: "hero",

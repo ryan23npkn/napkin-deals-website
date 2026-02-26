@@ -1,10 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 import {
   ArrowRight,
-  ArrowLeft,
   BarChart3,
   Zap,
   Calculator,
@@ -20,18 +18,14 @@ import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
-import { Logo } from "@/components/ui/logo"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import {
   fadeInUp,
-  fadeIn,
   staggerContainer,
   staggerItem,
   viewportConfig,
 } from "@/lib/animations"
 import { SignalScanner } from "@/components/signal-scanner"
-import { FOOTER_LINKS } from "@/lib/constants"
 
 const FEATURES = [
   {
@@ -111,30 +105,6 @@ function openCalendly() {
 export default function TakePrivatePage() {
   return (
     <>
-      {/* Header */}
-      <header className="fixed top-0 right-0 left-0 z-50 glass border-b border-border/10">
-        <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8">
-          <Link href="/" className="relative z-10">
-            <Logo />
-          </Link>
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/">
-                <ArrowLeft className="mr-1.5 h-3.5 w-3.5" />
-                Back to Napkin Deals
-              </Link>
-            </Button>
-            <Button size="sm" className="rounded-full" asChild>
-              <a href="https://takeprivate.napkindeals.com/register">
-                Apply for Access
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </header>
-
       <main className="pt-16">
         {/* Hero */}
         <section className="relative overflow-hidden bg-background pt-24 pb-16 sm:pt-32">
@@ -442,34 +412,6 @@ export default function TakePrivatePage() {
           </Container>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border">
-        <Container className="py-12">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Logo />
-              <span className="text-sm text-foreground-muted">
-                Take-Private Signal Intelligence
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="/" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Napkin Deals Home
-              </Link>
-              <a href="https://takeprivate.napkindeals.com/login" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
-                Sign In
-              </a>
-              <a href="https://takeprivate.napkindeals.com/register" className="text-sm text-primary font-medium hover:underline">
-                Apply for Access
-              </a>
-            </div>
-          </div>
-          <div className="mt-8 pt-6 border-t border-border text-center text-xs text-foreground-subtle">
-            A product of Napkin Deals Brokerage. Data sources: Financial Modeling Prep, SEC EDGAR.
-          </div>
-        </Container>
-      </footer>
     </>
   )
 }

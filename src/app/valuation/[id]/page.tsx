@@ -5,8 +5,6 @@ import { ArrowRight } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { Button } from "@/components/ui/button"
-import { Logo } from "@/components/ui/logo"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { GradientText } from "@/components/ui/gradient-text"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
@@ -27,14 +25,7 @@ export default function ValuationDetailPage() {
         color="accent"
       />
 
-      <header className="relative z-10 flex items-center justify-between px-6 py-4 sm:px-8">
-        <a href="/">
-          <Logo />
-        </a>
-        <ThemeToggle />
-      </header>
-
-      <Container className="relative flex min-h-[70vh] items-center justify-center">
+      <Container className="relative flex min-h-[70vh] items-center justify-center pt-16">
         <motion.div
           variants={staggerContainer}
           initial="hidden"

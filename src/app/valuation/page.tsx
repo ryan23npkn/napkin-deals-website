@@ -2,15 +2,12 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowLeft } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { WhatYouGet } from "@/components/valuation/what-you-get"
 import { WizardForm } from "@/components/valuation/wizard-form"
 import { ProcessingScreen } from "@/components/valuation/processing-screen"
 import { ValuationReport } from "@/components/valuation/valuation-report"
-import { Logo } from "@/components/ui/logo"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
 import type { ValuationInput, ValuationResult } from "@/lib/valuation"
 
 type Stage = "form" | "processing" | "results"
@@ -70,24 +67,7 @@ export default function ValuationPage() {
         color="accent"
       />
 
-      {/* Minimal header */}
-      <header className="relative z-10 flex items-center justify-between px-6 py-4 sm:px-8">
-        <a href="/">
-          <Logo />
-        </a>
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <a
-            href="/"
-            className="flex items-center gap-1.5 text-sm text-foreground-muted transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back
-          </a>
-        </div>
-      </header>
-
-      <Container className="relative pb-16 pt-4">
+      <Container className="relative pb-16 pt-20">
         <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">
           {/* Left: What You'll Get (sticky sidebar) */}
           <motion.div
