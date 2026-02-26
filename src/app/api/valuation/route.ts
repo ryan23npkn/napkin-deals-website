@@ -19,18 +19,18 @@ async function scrapeWebsite(url: string): Promise<string> {
     const html = await response.text()
 
     // Extract useful text from HTML (title, meta, headings, paragraphs)
-    const title = html.match(/<title[^>]*>(.*?)<\/title>/is)?.[1] || ""
+    const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ""
     const metaDesc =
-      html.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"[^>]*>/is)?.[1] ||
-      html.match(/<meta[^>]*content="([^"]*)"[^>]*name="description"[^>]*>/is)?.[1] ||
+      html.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"[^>]*>/i)?.[1] ||
+      html.match(/<meta[^>]*content="([^"]*)"[^>]*name="description"[^>]*>/i)?.[1] ||
       ""
-    const h1s = [...html.matchAll(/<h1[^>]*>(.*?)<\/h1>/gis)].map((m) =>
+    const h1s = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)].map((m) =>
       m[1].replace(/<[^>]+>/g, "").trim()
     )
-    const h2s = [...html.matchAll(/<h2[^>]*>(.*?)<\/h2>/gis)]
+    const h2s = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)]
       .map((m) => m[1].replace(/<[^>]+>/g, "").trim())
       .slice(0, 8)
-    const paragraphs = [...html.matchAll(/<p[^>]*>(.*?)<\/p>/gis)]
+    const paragraphs = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
       .map((m) => m[1].replace(/<[^>]+>/g, "").trim())
       .filter((p) => p.length > 30)
       .slice(0, 10)
