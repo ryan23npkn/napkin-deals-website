@@ -27,7 +27,12 @@ function NavLink({
 }) {
   if (useNativeAnchor(href)) {
     return (
-      <a href={href} className={className} onClick={onClick}>
+      <a
+        href={href}
+        className={className}
+        onClick={onClick}
+        {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </a>
     )
