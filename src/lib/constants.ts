@@ -231,8 +231,8 @@ export const AUDIENCES: AudienceItem[] = [
       "List your business for free with no exclusivity requirements. Get exposure to our curated network of qualified buyers and capital providers while maintaining complete control of the process.",
     features: ["Free to list", "No exclusivity", "Qualified buyers only", "NDA-protected"],
     Icon: Building2,
-    cta: "List Your Business",
-    href: "#contact",
+    cta: "Free Valuation",
+    href: "/valuation",
   },
   {
     title: "Buyers & Acquirers",
@@ -320,7 +320,7 @@ export const FOOTER_LINKS = {
   platform: [
     { label: "Explore Deals", href: "https://app.napkindeals.com/login" },
     { label: "Take-Private Signals", href: "/take-private" },
-    { label: "List a Business", href: "#contact" },
+    { label: "Free Valuation", href: "/valuation" },
     { label: "Capital Partners", href: "#who-we-serve" },
     { label: "Services", href: "#services" },
   ],

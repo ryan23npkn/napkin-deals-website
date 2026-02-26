@@ -65,7 +65,7 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
-              <a href="#contact">Free Valuation</a>
+              <a href="/valuation">Free Valuation</a>
             </Button>
             <Button size="sm" className="rounded-full" asChild>
               <a href="https://app.napkindeals.com/login">
@@ -118,7 +118,7 @@ export function Header() {
               className="mt-4 flex flex-col gap-3"
             >
               <Button variant="outline" className="rounded-full" asChild>
-                <a href="#contact" onClick={() => setMobileOpen(false)}>
+                <a href="/valuation" onClick={() => setMobileOpen(false)}>
                   Free Valuation
                 </a>
               </Button>

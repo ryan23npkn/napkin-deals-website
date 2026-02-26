@@ -63,7 +63,7 @@ export function Hero() {
                 className="rounded-full text-base"
                 asChild
               >
-                <a href="#contact">Get a Free Valuation</a>
+                <a href="/valuation">Get a Free Valuation</a>
               </Button>
             </motion.div>
 

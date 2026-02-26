@@ -43,16 +43,16 @@ export function CallToAction() {
               Ready to sell or raise capital?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              List your business for free. No exclusivity, no upfront fees. Get
-              connected with qualified buyers and capital providers.
+              Get a free AI-powered valuation in under 60 seconds. No exclusivity,
+              no upfront fees. See what your business is worth.
             </p>
             <Button
               size="lg"
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="#contact">
-                List Your Business
+              <a href="/valuation">
+                Get a Free Valuation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
