@@ -52,7 +52,7 @@ export function Hero() {
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="https://app.napkindeals.com/login">
+                <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
                   Browse Deals
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>

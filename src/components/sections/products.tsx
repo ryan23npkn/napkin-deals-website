@@ -84,7 +84,7 @@ export function Products() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" className="rounded-full" asChild>
-                <a href="https://app.napkindeals.com/login">
+                <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
                   Browse Deals
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>

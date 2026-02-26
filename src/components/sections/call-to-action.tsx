@@ -75,7 +75,7 @@ export function CallToAction() {
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="https://app.napkindeals.com/login">
+              <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
                 Explore Deals
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

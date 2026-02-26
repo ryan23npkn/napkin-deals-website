@@ -299,7 +299,7 @@ export function ValuationReport({ result, onListOnBulletin }: ValuationReportPro
           Share Valuation
         </Button>
         <Button variant="outline" size="sm" className="rounded-full" asChild>
-          <a href="https://app.napkindeals.com/login">
+          <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
             <ExternalLink className="mr-2 h-3.5 w-3.5" />
             Explore Deals on Bulletin
           </a>

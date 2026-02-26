@@ -279,7 +279,7 @@ export const AUDIENCES: AudienceItem[] = [
     features: ["30+ deal sources", "AI matching", "Intent signals", "Real-time alerts"],
     Icon: Users,
     cta: "Explore Deals",
-    href: "https://app.napkindeals.com/login",
+    href: "https://app.napkindeals.com/browse",
   },
   {
     title: "Capital Providers",
@@ -355,7 +355,7 @@ export const CONTACT_PHONE = "+1 (555) 123-4567"
 // ========== FOOTER ==========
 export const FOOTER_LINKS = {
   platform: [
-    { label: "Explore Deals", href: "https://app.napkindeals.com/login" },
+    { label: "Explore Deals", href: "https://app.napkindeals.com/browse" },
     { label: "Take-Private Signals", href: "/take-private" },
     { label: "Free Valuation", href: "/valuation" },
     { label: "Capital Partners", href: "#who-we-serve" },
