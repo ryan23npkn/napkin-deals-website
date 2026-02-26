@@ -124,12 +124,12 @@ export function Products() {
             variants={slideInLeft}
             className="order-2 lg:order-1"
           >
-            <div className="mx-auto max-w-md rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-6 backdrop-blur-sm lg:mx-0">
+            <div className="mx-auto max-w-md rounded-xl border border-primary/20 bg-primary/[0.04] p-6 backdrop-blur-sm lg:mx-0">
               {/* Mock score card */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2">
-                  <TrendingDown className="h-5 w-5 text-emerald-400" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                  <TrendingDown className="h-5 w-5 text-primary" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
                     Take-Private Score
                   </span>
                 </div>
@@ -160,11 +160,11 @@ export function Products() {
                     <div className="ml-3 flex items-center gap-1.5">
                       <div className="h-2 w-16 overflow-hidden rounded-full bg-border">
                         <div
-                          className="h-full rounded-full bg-emerald-400"
+                          className="h-full rounded-full bg-primary"
                           style={{ width: `${company.score}%` }}
                         />
                       </div>
-                      <span className="text-xs font-bold text-emerald-400 tabular-nums w-6 text-right">
+                      <span className="text-xs font-bold text-primary tabular-nums w-6 text-right">
                         {company.score}
                       </span>
                     </div>
@@ -177,7 +177,7 @@ export function Products() {
                   (dim) => (
                     <span
                       key={dim}
-                      className="rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-400/80"
+                      className="rounded-full border border-primary/20 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-medium text-primary/80"
                     >
                       {dim}
                     </span>
@@ -193,9 +193,9 @@ export function Products() {
             className="order-1 lg:order-2"
           >
             <div className="flex items-center gap-2 mb-1">
-              <TrendingDown className="h-4 w-4 text-emerald-400" />
-              <p className="text-sm font-bold uppercase tracking-widest text-emerald-400">
-                New Product
+              <TrendingDown className="h-4 w-4 text-primary" />
+              <p className="text-sm font-bold uppercase tracking-widest text-primary">
+                Beta — Early Access
               </p>
             </div>
             <h3 className="mt-3 font-display text-[clamp(1.5rem,1.25rem+1.25vw,2.25rem)] font-bold leading-[1.15] tracking-tight text-foreground">
@@ -210,8 +210,8 @@ export function Products() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               {TAKE_PRIVATE_HIGHLIGHTS.map((item) => (
                 <div key={item.label} className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10">
-                    <item.icon className="h-4 w-4 text-emerald-400" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                    <item.icon className="h-4 w-4 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-foreground-muted">{item.label}</span>
                 </div>
@@ -221,7 +221,7 @@ export function Products() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 size="lg"
-                className="rounded-full bg-emerald-500 text-white hover:bg-emerald-400"
+                className="rounded-full"
                 asChild
               >
                 <a href="https://takeprivate.napkindeals.com/register">

@@ -173,11 +173,6 @@ export const NAPKIN_DIFFERENCE_ITEMS: NapkinDifferenceItem[] = [
     description: "Qualified offers faster than traditional brokers.",
   },
   {
-    metric: "30+ sources",
-    title: "Aggregation advantage",
-    description: "Every private market deal in one platform.",
-  },
-  {
     metric: "No exclusivity",
     title: "Seller-friendly terms",
     description: "List your business and keep full control.",

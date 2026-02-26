@@ -71,7 +71,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 text-sm text-foreground-subtle"
             >
-              Free to list. No exclusivity. Success-fee only.
+              Free to list. No exclusivity.
             </motion.p>
 
             {/* Outcome Stats */}

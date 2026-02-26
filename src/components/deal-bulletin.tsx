@@ -50,12 +50,9 @@ export function DealBulletin({ className }: { className?: string }) {
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 animate-pulse rounded-full bg-success" />
           <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
-            Live Deal Feed
+            Deal Feed
           </span>
         </div>
-        <span className="text-xs text-foreground-subtle">
-          {DEAL_BULLETIN_ITEMS.length} active
-        </span>
       </div>
 
       {/* Scrolling deals */}

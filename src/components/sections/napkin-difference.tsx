@@ -192,7 +192,7 @@ export function NapkinDifference() {
         initial="hidden"
         whileInView="visible"
         viewport={viewportConfig}
-        className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-16 grid gap-4 sm:grid-cols-3"
       >
         {NAPKIN_DIFFERENCE_ITEMS.map((item) => (
           <motion.div
