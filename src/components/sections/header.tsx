@@ -141,10 +141,7 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className={cn(
-                        "absolute top-full pt-2",
-                        i === MEGA_MENU.length - 1 ? "right-0" : "left-0"
-                      )}
+                      className="absolute left-1/2 top-full -translate-x-1/2 pt-2"
                       style={{ minWidth: "320px" }}
                       onMouseEnter={() => {
                         if (closeTimeout.current) {
