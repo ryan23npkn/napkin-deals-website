@@ -39,10 +39,10 @@ export const MEGA_MENU: MegaMenuGroup[] = [
   {
     label: "Services",
     items: [
-      { label: "Advisory", description: "Selective M&A advisory for guided exits", href: "/#services", Icon: Briefcase },
-      { label: "Brokerage", description: "Full-service deal matching from 30+ sources", href: "/#services", Icon: Target },
-      { label: "Capital", description: "Growth equity and acquisition financing", href: "/#services", Icon: DollarSign },
-      { label: "Deals", description: "AI-powered deal discovery across sectors", href: "/#services", Icon: Globe },
+      { label: "Advisory", description: "Selective M&A advisory for guided exits", href: "/#service-a", Icon: Briefcase },
+      { label: "Brokerage", description: "Full-service deal matching from 30+ sources", href: "/#service-b", Icon: Target },
+      { label: "Capital", description: "Growth equity and acquisition financing", href: "/#service-c", Icon: DollarSign },
+      { label: "Deals", description: "AI-powered deal discovery across sectors", href: "/#service-d", Icon: Globe },
     ],
   },
   {

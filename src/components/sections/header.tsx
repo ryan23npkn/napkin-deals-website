@@ -108,9 +108,12 @@ export function Header() {
             onMouseLeave={handleMouseLeave}
           >
             {MEGA_MENU.map((group, i) => (
-              <div key={group.label} className="relative">
+              <div
+                key={group.label}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(i)}
+              >
                 <button
-                  onMouseEnter={() => handleMouseEnter(i)}
                   onClick={() =>
                     setActiveMenu(activeMenu === i ? null : i)
                   }
@@ -129,56 +132,58 @@ export function Header() {
                     )}
                   />
                 </button>
+
+                {/* Dropdown panel — positioned relative to this trigger */}
+                <AnimatePresence>
+                  {activeMenu === i && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      className={cn(
+                        "absolute top-full pt-2",
+                        i === MEGA_MENU.length - 1 ? "right-0" : "left-0"
+                      )}
+                      style={{ minWidth: "320px" }}
+                      onMouseEnter={() => {
+                        if (closeTimeout.current) {
+                          clearTimeout(closeTimeout.current)
+                          closeTimeout.current = null
+                        }
+                      }}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div className="rounded-xl border border-border bg-card p-2 shadow-lg">
+                        {group.items.map((item) => {
+                          const Icon = item.Icon
+                          return (
+                            <NavLink
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="flex items-start gap-3 rounded-lg px-3 py-3 transition-colors hover:bg-muted/60"
+                            >
+                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                                <Icon className="h-4 w-4 text-primary" />
+                              </div>
+                              <div>
+                                <p className="text-sm font-medium text-foreground">
+                                  {item.label}
+                                </p>
+                                <p className="mt-0.5 text-xs text-foreground-muted">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </NavLink>
+                          )
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
-
-            {/* Dropdown panel */}
-            <AnimatePresence>
-              {activeMenu !== null && (
-                <motion.div
-                  key={activeMenu}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute left-0 top-full pt-2"
-                  style={{ minWidth: "320px" }}
-                  onMouseEnter={() => {
-                    if (closeTimeout.current) {
-                      clearTimeout(closeTimeout.current)
-                      closeTimeout.current = null
-                    }
-                  }}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <div className="rounded-xl border border-border bg-card p-2 shadow-lg">
-                    {MEGA_MENU[activeMenu].items.map((item) => {
-                      const Icon = item.Icon
-                      return (
-                        <NavLink
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="flex items-start gap-3 rounded-lg px-3 py-3 transition-colors hover:bg-muted/60"
-                        >
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                            <Icon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-foreground">
-                              {item.label}
-                            </p>
-                            <p className="mt-0.5 text-xs text-foreground-muted">
-                              {item.description}
-                            </p>
-                          </div>
-                        </NavLink>
-                      )
-                    })}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </nav>
 
           {/* Desktop actions */}

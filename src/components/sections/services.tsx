@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
@@ -11,6 +11,32 @@ import { fadeInUp, slideInLeft, viewportConfig } from "@/lib/animations"
 
 export function Services() {
   const [activeIndex, setActiveIndex] = useState(0)
+
+  // Deep-link: activate the correct ABCD tab based on URL hash
+  useEffect(() => {
+    const hashToTab: Record<string, number> = {
+      "#service-a": 0,
+      "#service-b": 1,
+      "#service-c": 2,
+      "#service-d": 3,
+    }
+
+    const handleHash = () => {
+      const hash = window.location.hash
+      if (hash in hashToTab) {
+        setActiveIndex(hashToTab[hash])
+        // Scroll the services section into view
+        const el = document.getElementById(SECTION_IDS.services)
+        if (el) {
+          setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100)
+        }
+      }
+    }
+
+    handleHash()
+    window.addEventListener("hashchange", handleHash)
+    return () => window.removeEventListener("hashchange", handleHash)
+  }, [])
 
   return (
     <section
