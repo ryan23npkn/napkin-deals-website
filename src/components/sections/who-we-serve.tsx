@@ -68,6 +68,7 @@ export function WhoWeServe() {
               {/* CTA */}
               <a
                 href={audience.href}
+                {...(audience.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
               >
                 {audience.cta}

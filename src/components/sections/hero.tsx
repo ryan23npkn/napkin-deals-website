@@ -63,7 +63,7 @@ export function Hero() {
                 className="rounded-full text-base"
                 asChild
               >
-                <a href="/valuation">Get a Free Valuation</a>
+                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">Get a Free Valuation</a>
               </Button>
             </motion.div>
 

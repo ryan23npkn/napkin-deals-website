@@ -50,7 +50,7 @@ export const MEGA_MENU: MegaMenuGroup[] = [
     items: [
       { label: "Deal Bulletin", description: "Aggregated dealflow from 30+ sources", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
       { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
-      { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "/valuation", Icon: Calculator },
+      { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
     ],
   },
   {
@@ -269,7 +269,7 @@ export const AUDIENCES: AudienceItem[] = [
     features: ["Free to list", "No exclusivity", "Qualified buyers only", "NDA-protected"],
     Icon: Building2,
     cta: "Free Valuation",
-    href: "/valuation",
+    href: "https://app.napkindeals.com/valuation",
   },
   {
     title: "Buyers & Acquirers",
@@ -357,7 +357,7 @@ export const FOOTER_LINKS = {
   platform: [
     { label: "Explore Deals", href: "https://app.napkindeals.com/browse" },
     { label: "Take-Private Signals", href: "/take-private" },
-    { label: "Free Valuation", href: "/valuation" },
+    { label: "Free Valuation", href: "https://app.napkindeals.com/valuation" },
     { label: "Capital Partners", href: "#who-we-serve" },
     { label: "Services", href: "#services" },
   ],

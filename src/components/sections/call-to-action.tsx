@@ -51,7 +51,7 @@ export function CallToAction() {
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="/valuation">
+              <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
                 Get a Free Valuation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

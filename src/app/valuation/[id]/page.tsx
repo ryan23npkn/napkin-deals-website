@@ -53,7 +53,7 @@ export default function ValuationDetailPage() {
           </motion.p>
           <motion.div variants={fadeInUp} className="mt-8">
             <Button size="lg" className="rounded-full text-base" asChild>
-              <a href="/valuation">
+              <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
                 Get My Free Valuation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
