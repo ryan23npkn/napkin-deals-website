@@ -1,9 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
@@ -43,6 +45,7 @@ function openCalendly() {
 }
 
 export default function BuyersPage() {
+  const [poolSubmitted, setPoolSubmitted] = useState(false)
   const buyerAudience = AUDIENCES[1] // Buyers & Acquirers
   const capitalAudience = AUDIENCES[2] // Capital Providers
 
@@ -185,6 +188,61 @@ export default function BuyersPage() {
                 Book a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+            </div>
+
+            {/* Buyer Pool Sign-Up */}
+            <div className="mt-8">
+              <div className="flex items-center gap-3">
+                <div className="h-px flex-1 bg-border" />
+                <span className="text-xs font-medium uppercase tracking-wider text-foreground-muted">or</span>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+
+              {poolSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-4 flex items-center gap-3 rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4"
+                >
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">You&apos;re on our radar</p>
+                    <p className="text-xs text-foreground-muted">If a mandate comes through that fits your profile, we&apos;ll reach out.</p>
+                  </div>
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    setPoolSubmitted(true)
+                  }}
+                  className="mt-4"
+                >
+                  <p className="mb-3 text-sm text-foreground-muted">
+                    Not ready for a mandate? Drop your info and we&apos;ll
+                    reach out if a deal comes through that fits your profile.
+                    No criteria needed — we review your site.
+                  </p>
+                  <div className="flex flex-col gap-2 sm:flex-row">
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      className="sm:flex-1"
+                    />
+                    <Input
+                      type="url"
+                      placeholder="Company URL"
+                      required
+                      className="sm:flex-1"
+                    />
+                    <Button type="submit" size="sm" className="rounded-full whitespace-nowrap">
+                      Get on Our Radar
+                      <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                    </Button>
+                  </div>
+                </form>
+              )}
             </div>
           </motion.div>
 
