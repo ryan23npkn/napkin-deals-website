@@ -40,15 +40,15 @@ export const MEGA_MENU: MegaMenuGroup[] = [
     label: "Services",
     items: [
       { label: "Advisory", description: "Selective M&A advisory for guided exits", href: "/#service-a", Icon: Briefcase },
-      { label: "Brokerage", description: "Full-service deal matching from 30+ sources", href: "/#service-b", Icon: Target },
+      { label: "Brokerage", description: "Private market deal discovery and matching", href: "/#service-b", Icon: Target },
       { label: "Capital", description: "Growth equity and acquisition financing", href: "/#service-c", Icon: DollarSign },
-      { label: "Deals", description: "AI-powered deal discovery across sectors", href: "/#service-d", Icon: Globe },
+      { label: "Deals", description: "Private market deal flow across sectors", href: "/#service-d", Icon: Globe },
     ],
   },
   {
     label: "Products",
     items: [
-      { label: "Deal Bulletin", description: "Aggregated dealflow from 30+ sources", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
+      { label: "Deal Bulletin", description: "Private market deal flow from broker networks and marketplaces", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
       { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
       { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
     ],
@@ -84,9 +84,9 @@ export const HERO_STATS = [
 
 // ========== DEAL BULLETIN ==========
 export const BULLETIN_STATS = [
-  { value: "$4.6B+", label: "Deal Flow" },
-  { value: "400+", label: "Opportunities" },
-  { value: "30+", label: "Sources" },
+  { value: "11", label: "GICS Sectors" },
+  { value: "Weekly", label: "New Listings" },
+  { value: "Multi-Source", label: "Deal Flow" },
 ] as const
 
 export interface DealItem {
@@ -128,7 +128,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "B",
     title: "Brokerage",
     description:
-      "Full-service M&A brokerage connecting qualified buyers with vetted deal opportunities. Our platform aggregates listings from 30+ sources and uses intent-driven matching to surface the right deals.",
+      "Full-service M&A brokerage connecting qualified buyers with vetted deal opportunities. Our platform sources listings from broker networks, marketplaces, and off-market channels to surface the right deals.",
     Icon: Target,
   },
   {
@@ -142,7 +142,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "D",
     title: "Deals",
     description:
-      "Our deal platform surfaces opportunities across 6 regions and 11 GICS sectors. AI-powered filtering, intent signals, and real-time alerts help you move faster than the market.",
+      "Our deal platform surfaces opportunities across 6 regions and 11 GICS sectors. Advanced filtering by industry, size, and financials helps you find deals that match your criteria.",
     Icon: Globe,
   },
 ]
@@ -166,7 +166,7 @@ export const SERVICES_OUTCOMES: ServiceOutcome[] = [
     title: "Brokerage Outcomes",
     items: [
       "Access to every private market deal in one place",
-      "AI-matched opportunities to your criteria",
+      "Opportunities filtered to your criteria",
       "Qualified counterparties, not tire-kickers",
       "Full deal lifecycle support",
     ],
@@ -232,7 +232,7 @@ export const APPROACH_PILLARS: ApproachPillar[] = [
   {
     title: "AI-Powered Matching",
     description:
-      "Our platform pinpoints the right counterparties from 30+ sources based on your criteria, thesis, and intent signals.",
+      "Our platform connects you with the right counterparties from broker networks, marketplaces, and off-market sources based on your criteria and thesis.",
     Icon: Search,
   },
   {
@@ -275,8 +275,8 @@ export const AUDIENCES: AudienceItem[] = [
     title: "Buyers & Acquirers",
     subtitle: "Find your next deal",
     description:
-      "Access aggregated dealflow from 30+ sources with AI-powered filtering. Set intent signals, receive real-time alerts, and engage with sellers directly through our platform.",
-    features: ["30+ deal sources", "AI matching", "Intent signals", "Real-time alerts"],
+      "A curated feed of private market opportunities from broker networks, marketplaces, and off-market sources. Filter by industry, size, and financials to find deals that match your acquisition criteria.",
+    features: ["Multi-source deal flow", "Advanced filtering", "Saved searches", "Batch management"],
     Icon: Users,
     cta: "Explore Deals",
     href: "https://app.napkindeals.com/browse",
@@ -317,12 +317,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What is Napkin Deals?",
     answer:
-      "Napkin Deals is a modern private market brokerage that combines M&A advisory expertise with technology. We aggregate dealflow from 30+ sources and use AI-driven matching to connect buyers, sellers, and capital providers faster than traditional brokers.",
+      "Napkin Deals is a modern private market brokerage that combines M&A advisory expertise with technology. We source deals from broker networks, marketplaces, and off-market channels to connect buyers, sellers, and capital providers faster than traditional brokers.",
   },
   {
     question: "How does Napkin Deals find buyers?",
     answer:
-      "We aggregate opportunities from over 30 deal sources including BizBuySell, Empire Flippers, Acquire.com, and more. Our platform uses AI matching, intent signals, and real-time alerts to surface the right counterparties for every deal.",
+      "We source opportunities from broker networks and marketplaces including BizBuySell, Empire Flippers, Acquire.com, and more. Our platform offers advanced search, saved criteria, and batch management to help you find the right deals efficiently.",
   },
   {
     question: "What kinds of businesses does Napkin Deals work with?",

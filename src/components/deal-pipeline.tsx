@@ -55,7 +55,7 @@ const STAGES = [
   {
     icon: Globe,
     label: "Sourcing",
-    description: "30+ sources",
+    description: "Multi-source",
     counter: 433,
     counterSuffix: "",
     counterLabel: "Opportunities",

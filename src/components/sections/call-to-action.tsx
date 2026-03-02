@@ -67,8 +67,8 @@ export function CallToAction() {
               Looking for your next acquisition?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              Access aggregated dealflow from 30+ sources. AI-powered matching
-              surfaces opportunities aligned with your investment criteria.
+              Browse private market deal flow from broker networks, marketplaces,
+              and off-market sources. Advanced search, saved criteria, and batch management.
             </p>
             <Button
               size="lg"

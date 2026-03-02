@@ -29,7 +29,7 @@ export function Products() {
       <SectionHeader
         eyebrow="Our Products"
         title="Tools built for the private markets"
-        description="From aggregated deal discovery to AI-powered public company screening — our platform gives buyers, sellers, and capital providers an institutional edge."
+        description="From private market deal discovery to public company screening — our platform gives buyers, sellers, and capital providers an institutional edge."
       />
 
       <div className="mt-16 space-y-20">
@@ -46,20 +46,20 @@ export function Products() {
               Deal Discovery
             </p>
             <h3 className="mt-3 font-display text-[clamp(1.5rem,1.25rem+1.25vw,2.25rem)] font-bold leading-[1.15] tracking-tight text-foreground">
-              Aggregated Deal Bulletin
+              Private Market Deal Flow
             </h3>
             <p className="mt-4 text-base leading-relaxed text-foreground-muted">
-              A live, curated feed of private market opportunities aggregated
-              from 30+ sources. AI-powered filtering surfaces deals that match
-              your acquisition criteria, investment thesis, and geographic focus
-              — all in one place.
+              A curated feed of private market opportunities from broker
+              networks, marketplaces, and off-market sources. Filter by
+              industry, size, and financials to find deals that match your
+              acquisition criteria.
             </p>
             <ul className="mt-6 space-y-2.5">
               {[
-                "400+ deals across 11 GICS sectors",
-                "AI-matched recommendations based on your intent signals",
-                "Real-time alerts for new and updated opportunities",
-                "NDA-protected engagement with sellers",
+                "Deals across 11 GICS sectors, updated regularly",
+                "Advanced filtering by industry, size, and financials",
+                "Save custom searches to track your acquisition focus",
+                "Off-market and broker-sourced opportunities",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-foreground-muted">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />

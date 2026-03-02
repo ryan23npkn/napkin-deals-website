@@ -17,8 +17,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-foreground-muted">
-              Private market brokerage connecting buyers, sellers, and capital
-              providers through aggregated dealflow and intent-driven matching.
+              Private market deal discovery connecting buyers, sellers, and capital
+              providers.
             </p>
           </div>
 

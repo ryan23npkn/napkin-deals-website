@@ -20,11 +20,11 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: "Napkin Deals — Private Market Brokerage",
   description:
-    "Discover, evaluate, and close private market deals. Aggregated dealflow from 50+ sources with AI-powered matching for buyers, sellers, and capital providers.",
+    "Discover, evaluate, and close private market deals. Curated deal flow from broker networks, marketplaces, and off-market sources for buyers, sellers, and capital providers.",
   openGraph: {
     title: "Napkin Deals — Private Market Brokerage",
     description:
-      "Discover, evaluate, and close private market deals. Aggregated dealflow from 50+ sources.",
+      "Discover, evaluate, and close private market deals. Curated deal flow from broker networks and marketplaces.",
     type: "website",
   },
 }

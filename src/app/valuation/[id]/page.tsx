@@ -49,7 +49,7 @@ export default function ValuationDetailPage() {
             className="mt-4 text-lg text-foreground-muted"
           >
             AI-powered business valuation in under 60 seconds. Benchmarked
-            against $4.6B+ in real deal flow across 433 opportunities.
+            against real private market deal flow across 11 GICS sectors.
           </motion.p>
           <motion.div variants={fadeInUp} className="mt-8">
             <Button size="lg" className="rounded-full text-base" asChild>

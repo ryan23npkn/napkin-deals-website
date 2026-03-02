@@ -25,7 +25,7 @@ const PREVIEW_ITEMS = [
   {
     Icon: BarChart3,
     title: "Comparable Deals",
-    description: "Benchmarked against 433+ deals across 31 sources",
+    description: "Benchmarked against real private market deal flow",
   },
   {
     Icon: Target,
@@ -99,16 +99,16 @@ export function WhatYouGet() {
         </div>
         <div className="mt-3 grid grid-cols-3 gap-3">
           <div>
-            <p className="text-lg font-bold text-foreground">$4.6B+</p>
-            <p className="text-[10px] text-foreground-muted">Deal Flow</p>
+            <p className="text-lg font-bold text-foreground">11</p>
+            <p className="text-[10px] text-foreground-muted">GICS Sectors</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-foreground">433</p>
-            <p className="text-[10px] text-foreground-muted">Deals</p>
+            <p className="text-lg font-bold text-foreground">Weekly</p>
+            <p className="text-[10px] text-foreground-muted">New Listings</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-foreground">31</p>
-            <p className="text-[10px] text-foreground-muted">Sources</p>
+            <p className="text-lg font-bold text-foreground">Multi</p>
+            <p className="text-[10px] text-foreground-muted">Source Deal Flow</p>
           </div>
         </div>
       </div>

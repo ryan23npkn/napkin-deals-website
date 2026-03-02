@@ -49,9 +49,9 @@ export default function ValuationPage() {
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-foreground-muted">
                   Enter your website or describe your business and our AI will
-                  scrape, research, and benchmark it against 433+ real deals
-                  across 31 sources — delivering a full valuation report in
-                  under 60 seconds.
+                  scrape, research, and benchmark it against real private market
+                  deal flow across 11 GICS sectors — delivering a full
+                  valuation report in under 60 seconds.
                 </p>
               </motion.div>
 
