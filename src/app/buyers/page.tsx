@@ -23,11 +23,14 @@ import {
   INDUSTRIES,
   BUYER_PERSONAS,
   BUYER_FAQ_ITEMS,
+  MANDATE_BENEFITS,
 } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
   staggerItem,
+  slideInLeft,
+  slideInRight,
   viewportConfig,
 } from "@/lib/animations"
 
@@ -128,6 +131,147 @@ export default function BuyersPage() {
 
       {/* Products — reused from homepage (Deal Bulletin features + Take-Private) */}
       <Products />
+
+      {/* Buy Side Mandates */}
+      <Section id="mandates">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
+        >
+          {/* Left: Copy */}
+          <motion.div variants={slideInLeft}>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+              Buy Side Mandates
+            </span>
+
+            <h2 className="mt-5 font-display text-[clamp(1.875rem,1.5rem+1.875vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-foreground">
+              We source deals for you
+            </h2>
+
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-foreground-muted">
+              Hire our team to actively source acquisition targets using our
+              platform, broker network, and off-market channels — tailored
+              to your exact investment criteria.
+            </p>
+
+            <div className="mt-8 space-y-5">
+              {MANDATE_BENEFITS.map((benefit) => {
+                const Icon = benefit.Icon
+                return (
+                  <div key={benefit.title} className="flex gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{benefit.title}</h3>
+                      <p className="mt-0.5 text-sm leading-relaxed text-foreground-muted">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="mt-8">
+              <Button
+                size="lg"
+                className="rounded-full text-base"
+                onClick={openCalendly}
+              >
+                Book a Consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Right: Mandate brief mockup */}
+          <motion.div variants={slideInRight} className="hidden lg:block">
+            <div className="rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm dark:border-border/30">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                  <span className="text-sm font-semibold text-foreground">
+                    Active Mandate
+                  </span>
+                </div>
+                <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                  Sourcing
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="rounded-lg border border-border bg-background/50 p-4">
+                  <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                    Target Profile
+                  </p>
+                  <p className="mt-1.5 font-semibold text-foreground">
+                    B2B SaaS — Vertical Software
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-lg border border-border bg-background/50 p-3">
+                    <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                      Revenue
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-foreground">
+                      $2M – $8M ARR
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-border bg-background/50 p-3">
+                    <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                      EBITDA
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-foreground">
+                      $500K – $3M
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-border bg-background/50 p-3">
+                    <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                      Geography
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-foreground">
+                      North America
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-border bg-background/50 p-3">
+                    <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                      Deal Type
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-foreground">
+                      Platform Acquisition
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border bg-background/50 p-4">
+                  <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted">
+                    Pipeline Status
+                  </p>
+                  <div className="mt-2.5 space-y-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-foreground-muted">Sourced</span>
+                      <span className="font-semibold text-foreground">47</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-foreground-muted">Under Review</span>
+                      <span className="font-semibold text-foreground">12</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-foreground-muted">Shortlisted</span>
+                      <span className="font-semibold text-accent">5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </Section>
 
       {/* Who Uses This */}
       <Section variant="subtle" id="who-uses-this">

@@ -23,6 +23,10 @@ import {
   Filter,
   Bookmark,
   LayoutGrid,
+  UserCheck,
+  Lock,
+  Crosshair,
+  Clock,
   type LucideIcon,
 } from "lucide-react"
 
@@ -418,6 +422,40 @@ export const BUYER_PERSONAS: BuyerPersona[] = [
     title: "Individual Buyers",
     description: "Browse vetted small business opportunities. From SaaS to services, find a business that matches your expertise and goals.",
     Icon: Briefcase,
+  },
+]
+
+// ========== BUY SIDE MANDATES ==========
+export interface MandateBenefit {
+  title: string
+  description: string
+  Icon: LucideIcon
+}
+
+export const MANDATE_BENEFITS: MandateBenefit[] = [
+  {
+    title: "Dedicated Sourcing",
+    description:
+      "A dedicated team uses our systems to source deals matching your exact criteria — so you get a curated pipeline, not a firehose.",
+    Icon: UserCheck,
+  },
+  {
+    title: "Off-Market Access",
+    description:
+      "Reach deals before they hit public marketplaces through our broker network and proprietary channels.",
+    Icon: Lock,
+  },
+  {
+    title: "Thesis-Aligned Pipeline",
+    description:
+      "Every opportunity is pre-screened against your investment thesis, deal size, and sector focus before it reaches you.",
+    Icon: Crosshair,
+  },
+  {
+    title: "Time Back",
+    description:
+      "Stop trawling marketplaces. We deliver qualified opportunities so you can focus on diligence and closing.",
+    Icon: Clock,
   },
 ]
 
