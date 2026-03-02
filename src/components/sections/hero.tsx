@@ -46,14 +46,14 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
             >
-              More buyers. Better offers. Less noise. Qualified offers in
-              weeks, not months — every private market deal in one place.
+              Qualified offers in weeks, not months — no upfront fees, no
+              exclusivity. Let us find the right buyers for your business.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
-                  Browse Deals
+                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
+                  Get a Free Valuation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -63,7 +63,7 @@ export function Hero() {
                 className="rounded-full text-base"
                 asChild
               >
-                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">Get a Free Valuation</a>
+                <a href="https://app.napkindeals.com/list-your-business" target="_blank" rel="noopener noreferrer">List Your Business</a>
               </Button>
             </motion.div>
 
@@ -97,11 +97,11 @@ export function Hero() {
             <div className="rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm dark:border-border/30">
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
-                  Deal Pipeline
+                  Your Buyer Reach
                 </span>
                 <span className="flex items-center gap-1.5 text-xs text-foreground-subtle">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
-                  Real-time
+                  Live
                 </span>
               </div>
               <DealPipeline />

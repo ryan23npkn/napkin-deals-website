@@ -1,11 +1,20 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Calendar } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { SECTION_IDS } from "@/lib/constants"
 import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/animations"
+
+function openAdvisorCalendly() {
+  if (typeof window !== "undefined" && (window as any).Calendly) {
+    ;(window as any).Calendly.initPopupWidget({
+      url: "https://calendly.com/npkn-ryan/advisor-session",
+    })
+  }
+}
 
 export function CallToAction() {
   return (
@@ -34,13 +43,13 @@ export function CallToAction() {
           viewport={viewportConfig}
           className="grid gap-6 md:grid-cols-2"
         >
-          {/* Sellers */}
+          {/* Get a Valuation */}
           <motion.div
             variants={fadeInUp}
             className="rounded-xl border border-white/10 bg-white/[0.07] p-8 backdrop-blur-sm"
           >
             <h3 className="font-display font-bold text-2xl text-white">
-              Ready to sell or raise capital?
+              Ready to sell your business?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
               Get a free AI-powered valuation in under 60 seconds. No exclusivity,
@@ -58,30 +67,45 @@ export function CallToAction() {
             </Button>
           </motion.div>
 
-          {/* Buyers */}
+          {/* Book an Advisor Session */}
           <motion.div
             variants={fadeInUp}
             className="rounded-xl border border-white/10 bg-white/[0.07] p-8 backdrop-blur-sm"
           >
             <h3 className="font-display font-bold text-2xl text-white">
-              Looking for your next acquisition?
+              Want expert guidance?
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              Browse private market deal flow from broker networks, marketplaces,
-              and off-market sources. Advanced search, saved criteria, and batch management.
+              Talk to an M&A advisor about your business, your goals, and the best
+              path forward. No commitment, no pressure.
             </p>
             <Button
               size="lg"
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
-              asChild
+              onClick={openAdvisorCalendly}
             >
-              <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
-                Explore Deals
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              <Calendar className="mr-2 h-4 w-4" />
+              Book a Free Advisor Session
             </Button>
           </motion.div>
         </motion.div>
+
+        {/* Buyer cross-link */}
+        <motion.p
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="mt-6 text-center text-sm text-blue-200/50"
+        >
+          Looking to buy?{" "}
+          <Link
+            href="/buyers"
+            className="text-blue-200/80 underline underline-offset-2 transition-colors hover:text-white"
+          >
+            Explore deals →
+          </Link>
+        </motion.p>
       </Container>
     </section>
   )

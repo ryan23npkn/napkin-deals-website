@@ -58,7 +58,7 @@ export function Services() {
         <SectionHeader
           eyebrow="Services"
           title="The ABCD Model"
-          description="Four integrated service lines that cover every angle of private market dealmaking."
+          description="Four integrated service lines designed to get your business sold at the right price."
           align="center"
           dark
         />

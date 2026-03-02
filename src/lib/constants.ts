@@ -19,6 +19,10 @@ import {
   Calculator,
   HelpCircle,
   Mail,
+  Layers,
+  Filter,
+  Bookmark,
+  LayoutGrid,
   type LucideIcon,
 } from "lucide-react"
 
@@ -48,6 +52,7 @@ export const MEGA_MENU: MegaMenuGroup[] = [
   {
     label: "Products",
     items: [
+      { label: "For Buyers", description: "Browse private market deal flow", href: "/buyers", Icon: Users },
       { label: "Deal Bulletin", description: "Private market deal flow from broker networks and marketplaces", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
       { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
       { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
@@ -128,7 +133,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "B",
     title: "Brokerage",
     description:
-      "Full-service M&A brokerage connecting qualified buyers with vetted deal opportunities. Our platform sources listings from broker networks, marketplaces, and off-market channels to surface the right deals.",
+      "We bring qualified buyers to your deal. Our platform reaches across broker networks, marketplaces, and off-market channels to ensure maximum exposure for your business and the best possible outcome.",
     Icon: Target,
   },
   {
@@ -142,7 +147,7 @@ export const ABCD_ITEMS: ABCDItem[] = [
     letter: "D",
     title: "Deals",
     description:
-      "Our deal platform surfaces opportunities across 6 regions and 11 GICS sectors. Advanced filtering by industry, size, and financials helps you find deals that match your criteria.",
+      "Your listing reaches qualified buyers across 6 regions and 11 GICS sectors. Our deal platform ensures your business is visible to the right acquirers at the right time.",
     Icon: Globe,
   },
 ]
@@ -165,10 +170,10 @@ export const SERVICES_OUTCOMES: ServiceOutcome[] = [
   {
     title: "Brokerage Outcomes",
     items: [
-      "Access to every private market deal in one place",
-      "Opportunities filtered to your criteria",
-      "Qualified counterparties, not tire-kickers",
-      "Full deal lifecycle support",
+      "Maximum buyer exposure for your listing",
+      "Qualified buyers matched to your business",
+      "Serious counterparties, not tire-kickers",
+      "Full deal lifecycle support from list to close",
     ],
   },
   {
@@ -183,10 +188,10 @@ export const SERVICES_OUTCOMES: ServiceOutcome[] = [
   {
     title: "Deals Outcomes",
     items: [
-      "See opportunities before anyone else",
-      "Deals matched to your exact criteria",
-      "Move faster than the market",
-      "One platform, not thirty tabs",
+      "Your listing seen by buyers across 11 GICS sectors",
+      "Buyers matched to your business profile",
+      "Faster time-to-offer than traditional brokers",
+      "One platform managing your entire deal",
     ],
   },
 ]
@@ -317,17 +322,17 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What is Napkin Deals?",
     answer:
-      "Napkin Deals is a modern private market brokerage that combines M&A advisory expertise with technology. We source deals from broker networks, marketplaces, and off-market channels to connect buyers, sellers, and capital providers faster than traditional brokers.",
+      "Napkin Deals is a modern private market brokerage that combines M&A advisory expertise with technology. We help business owners sell with confidence — finding qualified buyers, managing the process, and closing deals faster than traditional brokers.",
   },
   {
-    question: "How does Napkin Deals find buyers?",
+    question: "How do you find buyers for my business?",
     answer:
-      "We source opportunities from broker networks and marketplaces including BizBuySell, Empire Flippers, Acquire.com, and more. Our platform offers advanced search, saved criteria, and batch management to help you find the right deals efficiently.",
+      "We reach buyers across broker networks, marketplaces, and off-market channels. Your listing gets exposure to qualified acquirers across 11 GICS sectors and 6 regions, ensuring the right buyers see your business.",
   },
   {
-    question: "What kinds of businesses does Napkin Deals work with?",
+    question: "What kinds of businesses do you work with?",
     answer:
-      "We work with SMBs across multiple industries and deal sizes, including Technology & SaaS, Healthcare, Consumer & E-Commerce, Business Services, Industrials, and Real Estate. Whether you are buying, selling, or raising capital, our platform supports the full deal lifecycle.",
+      "We work with SMBs across multiple industries and deal sizes, including Technology & SaaS, Healthcare, Consumer & E-Commerce, Business Services, Industrials, and Real Estate. Our platform supports the full deal lifecycle from valuation to close.",
   },
   {
     question: "How do fees work?",
@@ -335,9 +340,43 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Napkin Deals operates on a success-fee only model. There are no upfront costs, no retainers, and no exclusivity requirements. We earn our fee only when your deal closes, which aligns our incentives directly with yours.",
   },
   {
+    question: "Do I need to sign an exclusivity agreement?",
+    answer:
+      "No. We never require exclusivity. You maintain full control of your process and can work with other brokers or pursue direct buyers simultaneously. Our seller-friendly terms are designed to earn your business through results, not contracts.",
+  },
+  {
     question: "How fast is the process?",
     answer:
-      "Our platform delivers qualified offers in weeks, not months. By aggregating deal sources and automating buyer qualification, NDA management, and matching, we compress the traditional M&A timeline significantly.",
+      "Our platform delivers qualified offers in weeks, not months. By reaching buyers across multiple channels and managing the qualification process efficiently, we compress the traditional M&A timeline significantly.",
+  },
+]
+
+// ========== BUYER FAQ ==========
+export const BUYER_FAQ_ITEMS: FAQItem[] = [
+  {
+    question: "What deal sources do you aggregate?",
+    answer:
+      "We source opportunities from broker networks and marketplaces including BizBuySell, Empire Flippers, Acquire.com, Flippa, DealStream, BusinessBroker.net, and more — plus off-market deals from our own advisory pipeline.",
+  },
+  {
+    question: "How does filtering work?",
+    answer:
+      "Filter deals by industry (11 GICS sectors), revenue range, deal size, business type, geography, and more. Our advanced search lets you narrow down to exactly the types of businesses that match your acquisition criteria.",
+  },
+  {
+    question: "Can I save searches and track criteria?",
+    answer:
+      "Yes. Save custom search criteria to quickly re-run your preferred filters. Track specific sectors, deal sizes, or regions that match your acquisition focus and manage your pipeline efficiently.",
+  },
+  {
+    question: "What is Take-Private Intelligence?",
+    answer:
+      "Our Take-Private platform screens 5,000+ public companies for take-private candidacy using a 7-factor AI scoring model. Built for PE firms, hedge funds, and investment banks looking for LBO and activist opportunities.",
+  },
+  {
+    question: "How do I engage with a deal I'm interested in?",
+    answer:
+      "Browse available deals on our platform, review the deal card details, and express interest directly. Our team facilitates introductions and manages the engagement process to ensure a smooth experience for both parties.",
   },
 ]
 
@@ -352,13 +391,43 @@ export const INTEREST_OPTIONS = [
 export const CONTACT_EMAIL = "deals@napkindeals.com"
 export const CONTACT_PHONE = "+1 (555) 123-4567"
 
+// ========== BUYER PERSONAS ==========
+export interface BuyerPersona {
+  title: string
+  description: string
+  Icon: LucideIcon
+}
+
+export const BUYER_PERSONAS: BuyerPersona[] = [
+  {
+    title: "PE Firms",
+    description: "Source platform acquisitions and add-ons across industries. Filter by EBITDA, revenue, and sector to build your pipeline.",
+    Icon: TrendingUp,
+  },
+  {
+    title: "Search Funds",
+    description: "Find owner-operated businesses ready for acquisition. Focus on deal size, geography, and industry fit.",
+    Icon: Search,
+  },
+  {
+    title: "Strategic Acquirers",
+    description: "Identify bolt-on acquisitions and market expansion opportunities that complement your existing portfolio.",
+    Icon: Target,
+  },
+  {
+    title: "Individual Buyers",
+    description: "Browse vetted small business opportunities. From SaaS to services, find a business that matches your expertise and goals.",
+    Icon: Briefcase,
+  },
+]
+
 // ========== FOOTER ==========
 export const FOOTER_LINKS = {
   platform: [
+    { label: "For Buyers", href: "/buyers" },
     { label: "Explore Deals", href: "https://app.napkindeals.com/browse" },
     { label: "Take-Private Signals", href: "/take-private" },
     { label: "Free Valuation", href: "https://app.napkindeals.com/valuation" },
-    { label: "Capital Partners", href: "#who-we-serve" },
     { label: "Services", href: "#services" },
   ],
   company: [
