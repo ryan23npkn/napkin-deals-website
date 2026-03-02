@@ -45,21 +45,16 @@ export interface MegaMenuGroup {
 
 export const MEGA_MENU: MegaMenuGroup[] = [
   {
-    label: "Services",
+    label: "Products",
     items: [
-      { label: "Advisory", description: "Selective M&A advisory for guided exits", href: "/#service-a", Icon: Briefcase },
-      { label: "Brokerage", description: "Private market deal discovery and matching", href: "/#service-b", Icon: Target },
-      { label: "Capital", description: "Growth equity and acquisition financing", href: "/#service-c", Icon: DollarSign },
-      { label: "Deals", description: "Private market deal flow across sectors", href: "/#service-d", Icon: Globe },
+      { label: "Deal Bulletin", description: "Private market deal flow from broker networks and marketplaces", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
+      { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
     ],
   },
   {
-    label: "Products",
+    label: "Tools",
     items: [
-      { label: "For Buyers", description: "Browse private market deal flow", href: "/buyers", Icon: Users },
-      { label: "Deal Bulletin", description: "Private market deal flow from broker networks and marketplaces", href: "https://app.napkindeals.com/browse", Icon: BarChart3 },
-      { label: "Take-Private Intelligence", description: "AI screening of 5,000+ public companies", href: "/take-private", Icon: TrendingDown },
-      { label: "Free Valuation", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
+      { label: "Valuation Report", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
     ],
   },
   {
@@ -67,7 +62,6 @@ export const MEGA_MENU: MegaMenuGroup[] = [
     items: [
       { label: "Our Approach", description: "The Napkin Deals difference", href: "/#napkin-difference", Icon: Handshake },
       { label: "FAQ", description: "Common questions answered", href: "/#faq", Icon: HelpCircle },
-      { label: "Contact", description: "Get in touch with our team", href: "/#contact", Icon: Mail },
     ],
   },
 ]
@@ -469,10 +463,8 @@ export const FOOTER_LINKS = {
     { label: "Services", href: "#services" },
   ],
   company: [
-    { label: "About Us", href: "#" },
     { label: "The Difference", href: "#napkin-difference" },
     { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
