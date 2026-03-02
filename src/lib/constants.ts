@@ -55,6 +55,7 @@ export const MEGA_MENU: MegaMenuGroup[] = [
     label: "Tools",
     items: [
       { label: "Valuation Report", description: "AI-powered business valuation in 60s", href: "https://app.napkindeals.com/valuation", Icon: Calculator },
+      { label: "Find Buyers", description: "Identify qualified buyers for your business", href: "https://app.napkindeals.com/find-buyers", Icon: Search },
     ],
   },
   {
