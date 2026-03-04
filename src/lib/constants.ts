@@ -27,6 +27,14 @@ import {
   Lock,
   Crosshair,
   Clock,
+  Utensils,
+  Truck,
+  GraduationCap,
+  Leaf,
+  Wifi,
+  Wrench,
+  Store,
+  Smartphone,
   type LucideIcon,
 } from "lucide-react"
 
@@ -303,11 +311,19 @@ export interface IndustryItem {
 
 export const INDUSTRIES: IndustryItem[] = [
   { name: "Technology & SaaS", Icon: Monitor },
-  { name: "Healthcare & Life Sciences", Icon: HeartPulse },
-  { name: "Consumer & E-Commerce", Icon: ShoppingCart },
+  { name: "Healthcare", Icon: HeartPulse },
+  { name: "E-Commerce & DTC", Icon: ShoppingCart },
   { name: "Business Services", Icon: Briefcase },
   { name: "Industrials & Manufacturing", Icon: Factory },
   { name: "Real Estate", Icon: Building2 },
+  { name: "Food & Hospitality", Icon: Utensils },
+  { name: "Logistics & Distribution", Icon: Truck },
+  { name: "Education & Training", Icon: GraduationCap },
+  { name: "Energy & Sustainability", Icon: Leaf },
+  { name: "Telecom & Media", Icon: Wifi },
+  { name: "Home & Field Services", Icon: Wrench },
+  { name: "Franchise & Retail", Icon: Store },
+  { name: "Mobile Apps & Digital", Icon: Smartphone },
 ]
 
 // ========== FAQ ==========

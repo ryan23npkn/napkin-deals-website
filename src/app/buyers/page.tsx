@@ -20,10 +20,12 @@ import {
 import {
   BUYER_FAQ_ITEMS,
   MANDATE_BENEFITS,
+  INDUSTRIES,
 } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
+  staggerItem,
   slideInLeft,
   slideInRight,
   viewportConfig,
@@ -290,6 +292,42 @@ export default function BuyersPage() {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+      </Section>
+
+      {/* Industries */}
+      <Section>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+        >
+          <motion.p
+            variants={staggerItem}
+            className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-foreground-subtle"
+          >
+            Industries & Business Types
+          </motion.p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+            {INDUSTRIES.map((industry) => {
+              const Icon = industry.Icon
+              return (
+                <motion.div
+                  key={industry.name}
+                  variants={staggerItem}
+                  className="flex flex-col items-center gap-2.5 rounded-xl border border-border bg-card p-4 text-center transition-shadow hover:shadow-md"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+                    <Icon className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="text-xs font-medium text-foreground-muted leading-tight">
+                    {industry.name}
+                  </span>
+                </motion.div>
+              )
+            })}
+          </div>
         </motion.div>
       </Section>
 
