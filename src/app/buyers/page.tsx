@@ -12,7 +12,7 @@ import { SectionHeader } from "@/components/ui/section-header"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { Badge } from "@/components/ui/badge"
 import { DealBulletin } from "@/components/deal-bulletin"
-import { Products } from "@/components/sections/products"
+import { DealBulletinSection, TakePrivateSection } from "@/components/sections/products"
 import {
   Accordion,
   AccordionItem,
@@ -88,21 +88,26 @@ export default function BuyersPage() {
                 acquisition faster.
               </motion.p>
 
-              <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-full text-base" asChild>
-                  <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
-                    Browse Deals
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full text-base"
+              <motion.div variants={fadeInUp} className="mt-8">
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full text-base" asChild>
+                    <a href="https://app.napkindeals.com/register" target="_blank" rel="noopener noreferrer">
+                      Register Free
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+                    <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
+                      Browse Deals
+                    </a>
+                  </Button>
+                </div>
+                <button
                   onClick={openCalendly}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
                 >
-                  Request a Demo
-                </Button>
+                  Request a Demo <ArrowRight className="h-3.5 w-3.5" />
+                </button>
               </motion.div>
 
               {/* Stats */}
@@ -132,8 +137,8 @@ export default function BuyersPage() {
         </Container>
       </section>
 
-      {/* Products — reused from homepage (Deal Bulletin features + Take-Private) */}
-      <Products />
+      {/* Deal Bulletin */}
+      <DealBulletinSection />
 
       {/* Buy Side Mandates */}
       <Section id="mandates">
@@ -331,6 +336,9 @@ export default function BuyersPage() {
         </motion.div>
       </Section>
 
+      {/* Take-Private Signal Intelligence */}
+      <TakePrivateSection />
+
       {/* Who Uses This */}
       <Section variant="subtle" id="who-uses-this">
         <SectionHeader
@@ -520,15 +528,25 @@ export default function BuyersPage() {
               Browse private market deal flow from broker networks, marketplaces,
               and off-market sources. Advanced search, saved criteria, and batch management.
             </motion.p>
-            <motion.div variants={fadeInUp} className="mt-8">
+            <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap justify-center gap-3">
               <Button
                 size="lg"
                 className="rounded-full bg-white text-primary hover:bg-white/90"
                 asChild
               >
+                <a href="https://app.napkindeals.com/register" target="_blank" rel="noopener noreferrer">
+                  Register Free
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full !border-white/30 !bg-transparent !text-white !shadow-none hover:!bg-white/10"
+                asChild
+              >
                 <a href="https://app.napkindeals.com/browse" target="_blank" rel="noopener noreferrer">
                   Browse Deals
-                  <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </motion.div>
