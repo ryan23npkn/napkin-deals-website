@@ -88,9 +88,8 @@ export const HERO_STATS = [
 
 // ========== DEAL BULLETIN ==========
 export const BULLETIN_STATS = [
-  { value: "11", label: "GICS Sectors" },
-  { value: "Weekly", label: "New Listings" },
-  { value: "Multi-Source", label: "Deal Flow" },
+  { value: "$4.6B+", label: "Enterprise Value" },
+  { value: "30+", label: "Deal Sources" },
 ] as const
 
 export interface DealItem {
