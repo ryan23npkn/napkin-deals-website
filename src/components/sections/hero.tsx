@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
 import { DealPipeline } from "@/components/deal-pipeline"
-import { HERO_STATS, SECTION_IDS } from "@/lib/constants"
+import { SECTION_IDS } from "@/lib/constants"
 import {
   fadeInUp,
   staggerContainer,
@@ -38,22 +38,22 @@ export function Hero() {
               variants={fadeInUp}
               className="font-display font-bold text-[clamp(2.5rem,1.75rem+3.75vw,4.25rem)] leading-[1.05] tracking-tight text-foreground"
             >
-              The Private Market{" "}
-              <GradientText>Brokerage.</GradientText>
+              List your business.{" "}
+              <GradientText>Get qualified offers.</GradientText>
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
             >
-              Qualified offers in weeks, not months — no upfront fees, no
-              exclusivity. Let us find the right buyers for your business.
+              Free to list. No exclusivity. No upfront fees. We bring the
+              buyers to you.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
-                  Get a Free Valuation
+                <a href="https://app.napkindeals.com/list-your-business" target="_blank" rel="noopener noreferrer">
+                  List Your Business
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -63,7 +63,7 @@ export function Hero() {
                 className="rounded-full text-base"
                 asChild
               >
-                <a href="https://app.napkindeals.com/list-your-business" target="_blank" rel="noopener noreferrer">List Your Business</a>
+                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">Get a Free Valuation</a>
               </Button>
             </motion.div>
 
@@ -71,25 +71,8 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-6 text-sm text-foreground-subtle"
             >
-              Free to list. No exclusivity.
+              Join 400+ businesses already on the platform
             </motion.p>
-
-            {/* Outcome Stats */}
-            <motion.div
-              variants={fadeInUp}
-              className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6"
-            >
-              {HERO_STATS.map((stat) => (
-                <div key={stat.value}>
-                  <p className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-0.5 text-xs text-foreground-muted">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* Right: Deal Pipeline animation */}

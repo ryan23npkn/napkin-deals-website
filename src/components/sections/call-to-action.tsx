@@ -43,25 +43,25 @@ export function CallToAction() {
           viewport={viewportConfig}
           className="grid gap-6 md:grid-cols-2"
         >
-          {/* Get a Valuation */}
+          {/* List Your Business */}
           <motion.div
             variants={fadeInUp}
             className="rounded-xl border border-white/10 bg-white/[0.07] p-8 backdrop-blur-sm"
           >
             <h3 className="font-display font-bold text-2xl text-white">
-              Ready to sell your business?
+              List your business today
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-blue-200/70">
-              Get a free AI-powered valuation in under 60 seconds. No exclusivity,
-              no upfront fees. See what your business is worth.
+              Free to list, no exclusivity, no upfront fees. Your listing goes
+              live in under 5 minutes.
             </p>
             <Button
               size="lg"
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
-                Get a Free Valuation
+              <a href="https://app.napkindeals.com/list-your-business" target="_blank" rel="noopener noreferrer">
+                List Your Business
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
