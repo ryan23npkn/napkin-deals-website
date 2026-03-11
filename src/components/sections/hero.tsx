@@ -19,10 +19,9 @@ const heroStagger = {
 }
 
 const METRICS = [
-  "15x More Buyers",
-  "30% Higher Offers",
-  "<45 Day Offers",
-  "$0 Upfront Fees",
+  "More Buyers",
+  "Higher Offers",
+  "No Upfront Fees",
 ] as const
 
 const VALUATION_URL = "https://app.napkindeals.com/valuation"
@@ -136,8 +135,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted lg:mx-0"
             >
-              Free to list. No exclusivity. No upfront fees. We bring the
-              buyers to you.
+              The new way to sell your business.
             </motion.p>
 
             <motion.div
@@ -163,12 +161,12 @@ export function Hero() {
             <motion.div
               key="metrics"
               variants={fadeInUp}
-              className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4"
+              className="mt-10 inline-grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border"
             >
               {METRICS.map((m) => (
                 <div
                   key={m}
-                  className="bg-card px-5 py-4 text-center"
+                  className="bg-card px-4 py-2.5 text-center"
                 >
                   <p className="text-sm font-semibold tracking-tight text-foreground">{m}</p>
                 </div>
