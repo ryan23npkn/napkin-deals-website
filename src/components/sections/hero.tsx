@@ -1,83 +1,157 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
-import { BackgroundPattern, GradientOrb } from "@/components/ui/background-pattern"
+import { GradientOrb } from "@/components/ui/background-pattern"
 import { DealPipeline } from "@/components/deal-pipeline"
 import { SECTION_IDS } from "@/lib/constants"
-import {
-  fadeInUp,
-  staggerContainer,
-  viewportConfig,
-} from "@/lib/animations"
+import { fadeInUp } from "@/lib/animations"
+
+const EASE = [0.16, 1, 0.3, 1] as const
+
+const heroStagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+}
+
+const METRICS = [
+  "15x More Buyers",
+  "30% Higher Offers",
+  "<45 Day Offers",
+  "$0 Upfront Fees",
+] as const
+
+function HeroCTAInput() {
+  const [url, setUrl] = useState("")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const base = "https://app.napkindeals.com/list-your-business"
+    const href = url.trim() ? `${base}?url=${encodeURIComponent(url.trim())}` : base
+    window.open(href, "_blank")
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="w-full max-w-lg">
+      <div className="flex w-full overflow-hidden rounded-full border border-border bg-card shadow-lg shadow-primary/[0.04] transition-colors focus-within:border-primary/30 focus-within:shadow-primary/[0.08]">
+        <input
+          type="text"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="Enter your business website"
+          className="h-12 flex-1 bg-transparent px-5 text-sm text-foreground placeholder:text-foreground-subtle focus:outline-none sm:h-14 sm:text-base"
+        />
+        <Button
+          type="submit"
+          size="lg"
+          className="m-1.5 shrink-0 rounded-full px-5 text-sm font-semibold sm:px-7 sm:text-base"
+        >
+          Find Buyers
+          <ArrowRight className="ml-1.5 h-4 w-4" />
+        </Button>
+      </div>
+      <p className="mt-3 text-sm text-foreground-subtle">
+        Or{" "}
+        <a
+          href="https://app.napkindeals.com/list-your-business"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 text-foreground-muted transition-colors hover:text-foreground"
+        >
+          list your business directly
+        </a>
+      </p>
+    </form>
+  )
+}
 
 export function Hero() {
   return (
     <section
       id={SECTION_IDS.hero}
-      className="relative min-h-screen overflow-hidden bg-background pt-24 pb-16 sm:pt-32"
+      className="relative overflow-hidden bg-background pt-10 pb-16 sm:pt-14 sm:pb-20"
     >
-      {/* Background elements */}
-      <BackgroundPattern variant="dots" />
-      <GradientOrb className="left-[-10%] top-[10%] h-[500px] w-[500px]" color="primary" />
-      <GradientOrb className="right-[-10%] top-[30%] h-[400px] w-[400px]" color="accent" />
+      {/* Subtle background depth */}
+      <GradientOrb className="left-[-10%] top-[5%] h-[600px] w-[600px]" color="primary" />
+      <GradientOrb className="right-[-15%] top-[20%] h-[500px] w-[500px]" color="accent" />
 
       <Container className="relative">
-        {/* Two-column layout */}
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 xl:grid-cols-2 xl:gap-20">
           {/* Left: Content */}
           <motion.div
-            variants={staggerContainer}
+            variants={heroStagger}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="text-center xl:text-left"
           >
+            {/* Eyebrow badge */}
+            <motion.div key="eyebrow" variants={fadeInUp}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-foreground-muted shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
+                For businesses with $1M–100M+ in revenue
+              </span>
+            </motion.div>
+
             <motion.h1
+              key="headline"
               variants={fadeInUp}
-              className="font-display font-bold text-[clamp(2.5rem,1.75rem+3.75vw,4.25rem)] leading-[1.05] tracking-tight text-foreground"
+              className="mt-6 font-display font-bold text-[clamp(2.75rem,2rem+3.75vw,4.5rem)] leading-[1.02] tracking-tight text-foreground"
             >
               List your business.{" "}
+              <br className="hidden sm:block" />
               <GradientText>Get qualified offers.</GradientText>
             </motion.h1>
 
             <motion.p
+              key="subtitle"
               variants={fadeInUp}
-              className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted"
+              className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted xl:mx-0"
             >
               Free to list. No exclusivity. No upfront fees. We bring the
               buyers to you.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="https://app.napkindeals.com/list-your-business" target="_blank" rel="noopener noreferrer">
-                  List Your Business
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full text-base"
-                asChild
-              >
-                <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">Get a Free Valuation</a>
-              </Button>
+            <motion.div
+              key="cta"
+              variants={fadeInUp}
+              className="mt-8 flex justify-center xl:justify-start"
+            >
+              <HeroCTAInput />
             </motion.div>
 
-            <motion.p
+            {/* Metrics strip */}
+            <motion.div
+              key="metrics"
               variants={fadeInUp}
-              className="mt-6 text-sm text-foreground-subtle"
+              className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4"
             >
-              Join 400+ businesses already on the platform
-            </motion.p>
+              {METRICS.map((m, i) => (
+                <div
+                  key={m}
+                  className="bg-card px-5 py-4 text-center"
+                >
+                  <p className="text-sm font-semibold tracking-tight text-foreground">{m}</p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Right: Deal Pipeline animation */}
-          <div className="hidden lg:block">
-            <div className="rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm dark:border-border/30">
+          {/* Right: Deal Pipeline (xl only) */}
+          <motion.div
+            className="hidden xl:block"
+            initial={{ opacity: 0, y: 32, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
+          >
+            <div className="gradient-border rounded-2xl border border-border bg-card p-6 shadow-xl shadow-primary/[0.04]">
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
                   Your Buyer Reach
@@ -89,9 +163,29 @@ export function Hero() {
               </div>
               <DealPipeline />
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Buyer link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+          className="mt-12 text-center xl:text-left"
+        >
+          <a
+            href="/buyers"
+            className="inline-flex items-center gap-1.5 text-sm text-foreground-subtle transition-colors hover:text-foreground-muted"
+          >
+            Looking to buy a business? Join our buyer network
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </motion.div>
       </Container>
+
+      {/* Bottom gradient fade into next section */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background-subtle" />
     </section>
   )
 }

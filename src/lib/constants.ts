@@ -469,6 +469,14 @@ export const MANDATE_BENEFITS: MandateBenefit[] = [
   },
 ]
 
+// ========== HOW IT WORKS FLOW ==========
+export const FLOW_RESULTS = [
+  { value: "1,000+", label: "Buyers Identified", Icon: Users },
+  { value: "120+", label: "NDAs Signed", Icon: ShieldCheck },
+  { value: "20+", label: "Meetings Scheduled", Icon: Handshake },
+  { value: "5–10", label: "Offers Received", Icon: Target },
+] as const
+
 // ========== FOOTER ==========
 export const FOOTER_LINKS = {
   platform: [

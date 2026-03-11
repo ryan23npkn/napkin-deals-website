@@ -68,4 +68,50 @@ export const drawLine: Variants = {
   },
 }
 
+// Flow diagram orchestration
+export const flowContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.3, delayChildren: 0.3 },
+  },
+}
+
+export const zoneRevealLeft: Variants = {
+  hidden: { opacity: 0, x: -40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+export const zoneRevealCenter: Variants = {
+  hidden: { opacity: 0, scale: 0.92 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+export const zoneRevealRight: Variants = {
+  hidden: { opacity: 0, x: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+export const popIn: Variants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 200, damping: 15 },
+  },
+}
+
 export const viewportConfig = { once: true, amount: 0.3 } as const
