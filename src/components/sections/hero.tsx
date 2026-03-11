@@ -1,13 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Building2, ShieldCheck, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { GradientText } from "@/components/ui/gradient-text"
 import { GradientOrb } from "@/components/ui/background-pattern"
-import { DealPipeline } from "@/components/deal-pipeline"
 import { SECTION_IDS } from "@/lib/constants"
 import { fadeInUp } from "@/lib/animations"
 
@@ -27,47 +25,71 @@ const METRICS = [
   "$0 Upfront Fees",
 ] as const
 
-function HeroCTAInput() {
-  const [url, setUrl] = useState("")
+const VALUATION_URL = "https://app.napkindeals.com/valuation"
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const base = "https://app.napkindeals.com/list-your-business"
-    const href = url.trim() ? `${base}?url=${encodeURIComponent(url.trim())}` : base
-    window.open(href, "_blank")
-  }
+const BUYER_MATCHES = [
+  { name: "Strategic Acquirer", type: "PE-backed", score: 94, Icon: Building2, delay: 0.8 },
+  { name: "Growth Fund III", type: "Private Equity", score: 91, Icon: TrendingUp, delay: 1.2 },
+  { name: "Verified Buyer", type: "NDA Signed", score: 87, Icon: ShieldCheck, delay: 1.6 },
+] as const
 
+function BuyerMatchStack() {
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-lg">
-      <div className="flex w-full overflow-hidden rounded-full border border-border bg-card shadow-lg shadow-primary/[0.04] transition-colors focus-within:border-primary/30 focus-within:shadow-primary/[0.08]">
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter your business website"
-          className="h-12 flex-1 bg-transparent px-5 text-sm text-foreground placeholder:text-foreground-subtle focus:outline-none sm:h-14 sm:text-base"
-        />
-        <Button
-          type="submit"
-          size="lg"
-          className="m-1.5 shrink-0 rounded-full px-5 text-sm font-semibold sm:px-7 sm:text-base"
-        >
-          Find Buyers
-          <ArrowRight className="ml-1.5 h-4 w-4" />
-        </Button>
+    <div className="relative w-[280px]">
+      {/* Header pill */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
+        className="mb-3 flex items-center justify-between"
+      >
+        <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
+          Buyer Matches
+        </span>
+        <span className="flex items-center gap-1.5 text-xs text-foreground-subtle">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
+          Live
+        </span>
+      </motion.div>
+
+      {/* Match cards stacking in */}
+      <div className="flex flex-col gap-2.5">
+        {BUYER_MATCHES.map(({ name, type, score, Icon, delay }) => (
+          <motion.div
+            key={name}
+            initial={{ opacity: 0, x: 24, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay, ease: EASE }}
+            className="flex items-center gap-3 rounded-xl border border-border bg-card p-3.5 shadow-md shadow-primary/[0.03]"
+          >
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/[0.08]">
+              <Icon className="h-4 w-4 text-primary" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-semibold text-foreground truncate">{name}</p>
+              <p className="text-xs text-foreground-subtle">{type}</p>
+            </div>
+            <div className="shrink-0 text-right">
+              <p className="text-sm font-bold text-success">{score}%</p>
+              <p className="text-[10px] text-foreground-subtle">match</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
-      <p className="mt-3 text-sm text-foreground-subtle">
-        Or{" "}
-        <a
-          href="https://app.napkindeals.com/list-your-business"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4 text-foreground-muted transition-colors hover:text-foreground"
-        >
-          list your business directly
-        </a>
-      </p>
-    </form>
+
+      {/* Counter pill */}
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4, delay: 2.0, ease: EASE }}
+        className="mt-3 flex items-center justify-center gap-1.5 rounded-full border border-border bg-card/80 px-4 py-2 text-xs text-foreground-muted shadow-sm"
+      >
+        <span className="font-semibold text-foreground">+47 more</span> buyers matched
+      </motion.div>
+    </div>
   )
 }
 
@@ -82,14 +104,14 @@ export function Hero() {
       <GradientOrb className="right-[-15%] top-[20%] h-[500px] w-[500px]" color="accent" />
 
       <Container className="relative">
-        <div className="grid items-center gap-12 xl:grid-cols-2 xl:gap-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
           {/* Left: Content */}
           <motion.div
             variants={heroStagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="text-center xl:text-left"
+            className="text-center lg:text-left"
           >
             {/* Eyebrow badge */}
             <motion.div key="eyebrow" variants={fadeInUp}>
@@ -112,7 +134,7 @@ export function Hero() {
             <motion.p
               key="subtitle"
               variants={fadeInUp}
-              className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted xl:mx-0"
+              className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted lg:mx-0"
             >
               Free to list. No exclusivity. No upfront fees. We bring the
               buyers to you.
@@ -121,9 +143,20 @@ export function Hero() {
             <motion.div
               key="cta"
               variants={fadeInUp}
-              className="mt-8 flex justify-center xl:justify-start"
+              className="mt-8 flex flex-col items-center gap-3 lg:items-start"
             >
-              <HeroCTAInput />
+              <Button
+                size="lg"
+                className="rounded-full px-8 text-base font-semibold shadow-lg shadow-primary/[0.12] sm:px-10 sm:text-lg"
+                asChild
+              >
+                <a href={VALUATION_URL} target="_blank" rel="noopener noreferrer">
+                  Get a Free Valuation <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <p className="text-sm text-foreground-subtle">
+                No commitment · Takes under 5 minutes
+              </p>
             </motion.div>
 
             {/* Metrics strip */}
@@ -132,7 +165,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4"
             >
-              {METRICS.map((m, i) => (
+              {METRICS.map((m) => (
                 <div
                   key={m}
                   className="bg-card px-5 py-4 text-center"
@@ -143,27 +176,10 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Deal Pipeline (xl only) */}
-          <motion.div
-            className="hidden xl:block"
-            initial={{ opacity: 0, y: 32, scale: 0.97 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
-          >
-            <div className="gradient-border rounded-2xl border border-border bg-card p-6 shadow-xl shadow-primary/[0.04]">
-              <div className="mb-4 flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
-                  Your Buyer Reach
-                </span>
-                <span className="flex items-center gap-1.5 text-xs text-foreground-subtle">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
-                  Live
-                </span>
-              </div>
-              <DealPipeline />
-            </div>
-          </motion.div>
+          {/* Right: Buyer match stack (lg only) */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <BuyerMatchStack />
+          </div>
         </div>
 
         {/* Buyer link */}
@@ -172,7 +188,7 @@ export function Hero() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5, delay: 1.2 }}
-          className="mt-12 text-center xl:text-left"
+          className="mt-12 text-center lg:text-left"
         >
           <a
             href="/buyers"

@@ -295,9 +295,17 @@ function FlowDiagram() {
 
 /* ── Main export ────────────────────────────────────── */
 
+function openAdvisorCalendly() {
+  if (typeof window !== "undefined" && (window as /* eslint-disable-line */ any).Calendly) {
+    ;(window as /* eslint-disable-line */ any).Calendly.initPopupWidget({
+      url: "https://calendly.com/npkn-ryan/advisor-session",
+    })
+  }
+}
+
 export function HowItWorks() {
   return (
-    <Section variant="subtle">
+    <Section variant="subtle" className="!pt-12 sm:!pt-16">
       {/* Header */}
       <motion.div
         variants={staggerContainer}
@@ -365,16 +373,22 @@ export function HowItWorks() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mt-12 text-center"
       >
-        <Button size="lg" className="rounded-full text-base" asChild>
-          <a
-            href="https://app.napkindeals.com/list-your-business"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            List Your Business
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+          <Button size="lg" className="rounded-full text-base" asChild>
+            <a
+              href="https://app.napkindeals.com/list-your-business"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              List Your Business
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" className="rounded-full text-base" onClick={openAdvisorCalendly}>
+            Book a Free Advisor Session
             <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
-        </Button>
+          </Button>
+        </div>
       </motion.div>
 
       {/* Not ready — inline tools */}
