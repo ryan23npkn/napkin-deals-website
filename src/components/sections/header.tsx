@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from "lucide-react"
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/ui/logo"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
@@ -45,6 +46,8 @@ function NavLink({
 }
 
 export function Header() {
+  const pathname = usePathname()
+  const isBuyersPage = pathname?.startsWith("/buyers")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<number | null>(null)
@@ -192,13 +195,9 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/buyers">For Buyers</Link>
-            </Button>
-            <Button size="sm" className="rounded-full" asChild>
-              <a href="https://app.napkindeals.com/valuation" target="_blank" rel="noopener noreferrer">
-                Free Valuation
-                <ArrowRight className="ml-1 h-3.5 w-3.5" />
-              </a>
+              <Link href={isBuyersPage ? "/" : "/buyers"}>
+                {isBuyersPage ? "For Sellers" : "For Buyers"}
+              </Link>
             </Button>
           </div>
 
@@ -303,20 +302,9 @@ export function Header() {
               className="mt-6 flex flex-col gap-3"
             >
               <Button variant="outline" className="rounded-full" asChild>
-                <Link href="/buyers" onClick={closeMobile}>
-                  For Buyers
+                <Link href={isBuyersPage ? "/" : "/buyers"} onClick={closeMobile}>
+                  {isBuyersPage ? "For Sellers" : "For Buyers"}
                 </Link>
-              </Button>
-              <Button className="rounded-full" asChild>
-                <a
-                  href="https://app.napkindeals.com/valuation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeMobile}
-                >
-                  Free Valuation
-                  <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                </a>
               </Button>
             </motion.div>
           </nav>

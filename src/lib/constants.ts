@@ -363,6 +363,11 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer:
       "Our platform delivers qualified offers in weeks, not months. By reaching buyers across multiple channels and managing the qualification process efficiently, we compress the traditional M&A timeline significantly.",
   },
+  {
+    question: "What if I list but decide I don't want to sell?",
+    answer:
+      "No problem at all. You can pause or remove your listing at any time with no penalties and no questions asked. Many sellers list to explore what interest looks like before making any decisions. You're never obligated to respond to offers or move forward with a deal.",
+  },
 ]
 
 // ========== BUYER FAQ ==========

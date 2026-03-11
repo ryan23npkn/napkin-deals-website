@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Section } from "@/components/ui/section"
 import { SectionHeader } from "@/components/ui/section-header"
 import { DealBulletin } from "@/components/deal-bulletin"
-import { BULLETIN_STATS } from "@/lib/constants"
+import { BULLETIN_STATS, INDUSTRIES } from "@/lib/constants"
 import {
   staggerContainer,
+  staggerItem,
   slideInLeft,
   slideInRight,
   viewportConfig,
@@ -85,6 +86,39 @@ export function SellerDealBulletin() {
         <motion.div variants={slideInRight}>
           <DealBulletin className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto" />
         </motion.div>
+      </motion.div>
+
+      {/* Industries row */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportConfig}
+        className="mt-16"
+      >
+        <motion.p
+          variants={staggerItem}
+          className="mb-6 text-center text-xs font-medium uppercase tracking-widest text-foreground-subtle"
+        >
+          Active across 14 industries
+        </motion.p>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-7">
+          {INDUSTRIES.map((industry) => {
+            const Icon = industry.Icon
+            return (
+              <motion.div
+                key={industry.name}
+                variants={staggerItem}
+                className="flex flex-col items-center gap-2 rounded-lg border border-border bg-card px-3 py-3 text-center"
+              >
+                <Icon className="h-4 w-4 text-primary" />
+                <span className="text-[11px] font-medium leading-tight text-foreground-muted">
+                  {industry.name}
+                </span>
+              </motion.div>
+            )
+          })}
+        </div>
       </motion.div>
     </Section>
   )

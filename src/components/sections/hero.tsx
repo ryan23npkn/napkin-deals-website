@@ -46,10 +46,7 @@ function BuyerMatchStack() {
         <span className="text-xs font-semibold uppercase tracking-wider text-foreground-muted">
           Buyer Matches
         </span>
-        <span className="flex items-center gap-1.5 text-xs text-foreground-subtle">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
-          Live
-        </span>
+        <span className="text-xs text-foreground-subtle" />
       </motion.div>
 
       {/* Match cards stacking in */}
