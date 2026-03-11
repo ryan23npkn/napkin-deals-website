@@ -17,6 +17,7 @@ import {
   staggerItem,
   viewportConfig,
 } from "@/lib/animations"
+import { FlowDiagram } from "@/components/flow-diagram"
 
 const AUTO_ADVANCE_MS = 6000
 
@@ -72,6 +73,11 @@ export function NapkinDifference() {
         title="The Napkin Deals Approach"
         description="A modern approach to private market dealmaking — combining expert advisory with technology to deliver better outcomes, faster."
       />
+
+      {/* Flow Diagram */}
+      <div className="mt-12">
+        <FlowDiagram />
+      </div>
 
       {/* Showcase */}
       <motion.div
